@@ -1,6 +1,6 @@
 /* Footer — Light theme: dark footer for visual anchoring */
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
-import { BRANDS, PHONE_DISPLAY, EMAIL, WHATSAPP_NUMBER } from "@/lib/data";
+import { BRANDS, PHONE_DISPLAY, PHONE_TEL, EMAIL, WHATSAPP_NUMBER } from "@/lib/data";
 
 const NAV_ITEMS = ["Inicio", "Catálogo", "Nosotros", "Marcas", "Contacto"];
 
@@ -72,7 +72,7 @@ export default function Footer() {
                 <span className="text-gray-400">Barrio Guacerique, Bulevar Comunidad Europea, frente a Plaza Aire Frío</span>
               </li>
               <li>
-                <a href={`tel:${PHONE_DISPLAY}`} className="flex items-center gap-2 text-sm text-gray-400 hover:text-red-400 transition-colors">
+                <a href={`tel:${PHONE_TEL}`} className="flex items-center gap-2 text-sm text-gray-400 hover:text-red-400 transition-colors">
                   <Phone className="w-4 h-4 text-red-500" />
                   {PHONE_DISPLAY}
                 </a>

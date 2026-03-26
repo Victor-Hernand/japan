@@ -1,13 +1,13 @@
 /* TopBar — Light theme: white bg, dark text, red accents */
 import { Phone, Mail } from "lucide-react";
-import { PHONE_DISPLAY, EMAIL } from "@/lib/data";
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL } from "@/lib/data";
 
 export default function TopBar() {
   return (
     <div className="bg-white border-b border-gray-100 text-sm hidden md:block">
       <div className="container flex items-center justify-between py-2">
         <div className="flex items-center gap-6">
-          <a href={`tel:${PHONE_DISPLAY}`} className="flex items-center gap-1.5 text-gray-600 hover:text-red-600 transition-colors">
+          <a href={`tel:${PHONE_TEL}`} className="flex items-center gap-1.5 text-gray-600 hover:text-red-600 transition-colors">
             <Phone className="w-3.5 h-3.5" />
             <span>{PHONE_DISPLAY}</span>
           </a>

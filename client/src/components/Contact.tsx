@@ -1,7 +1,7 @@
 /* Contact — Light theme: gray-50 bg, white cards */
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from "lucide-react";
-import { PHONE_DISPLAY, EMAIL, WHATSAPP_NUMBER } from "@/lib/data";
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WHATSAPP_NUMBER } from "@/lib/data";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -50,7 +50,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 text-sm">Teléfono</h4>
-                <a href={`tel:${PHONE_DISPLAY}`} className="text-red-600 text-sm font-medium hover:underline">{PHONE_DISPLAY}</a>
+                <a href={`tel:${PHONE_TEL}`} className="text-red-600 text-sm font-medium hover:underline">{PHONE_DISPLAY}</a>
               </div>
             </div>
 

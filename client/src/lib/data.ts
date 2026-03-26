@@ -123,6 +123,9 @@ export const FEATURED_PRODUCTS = [
   },
 ];
 
-export const WHATSAPP_NUMBER = "5049999999";
-export const PHONE_DISPLAY = "+504 9999-9999";
-export const EMAIL = "info@japanhn.com";
+export const WHATSAPP_NUMBER = "50494525175";
+/** Formato legible para la UI */
+export const PHONE_DISPLAY = "+504 9452-5175";
+/** Sin espacios para `tel:` */
+export const PHONE_TEL = "+50494525175";
+export const EMAIL = "ventas@japanhn.com";
