@@ -16,10 +16,10 @@ export default function Catalog() {
             Nuestros Productos
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Catálogo de <span className="text-red-600 italic">Autopartes</span>
+            Catálogo de <span className="text-red-600 italic">autopartes japonesas</span>
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            Amplio portafolio de repuestos japoneses organizados por categoría, con marcas líderes reconocidas internacionalmente.
+            Portafolio completo de repuestos japoneses organizados por categoría, ideales para distribuidores que buscan calidad y durabilidad.
           </p>
         </div>
 

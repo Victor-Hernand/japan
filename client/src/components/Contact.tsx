@@ -21,10 +21,10 @@ export default function Contact() {
             Contacto
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Hablemos de <span className="text-red-600 italic">Negocios</span>
+            Hablemos de <span className="text-red-600 italic">negocios y cotizaciones</span>
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            Estamos listos para ser tu socio estratégico. Contáctanos y descubre cómo Japan HN puede impulsar tu empresa.
+            Estamos listos para atenderte. Contáctanos y recibe asesoría personalizada para cotizar repuestos japoneses confiables para tu negocio.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function Contact() {
             >
               <MessageCircle className="w-5 h-5" />
               <div>
-                <h4 className="font-bold text-sm">WhatsApp Directo</h4>
+                <h4 className="font-bold text-sm">WhatsApp directo para cotizaciones</h4>
                 <p className="text-green-100 text-xs">Respuesta inmediata</p>
               </div>
             </a>
@@ -92,7 +92,7 @@ export default function Contact() {
           {/* Form */}
           <div className="reveal-right">
             <div className="bg-white border border-gray-200 rounded-2xl p-6 lg:p-8">
-              <h3 className="text-xl font-black text-gray-900 mb-1">Solicitar Cotización</h3>
+              <h3 className="text-xl font-black text-gray-900 mb-1">Solicita tu cotización</h3>
               <div className="w-10 h-1 bg-red-600 rounded mb-6" />
 
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -133,7 +133,7 @@ export default function Contact() {
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Mensaje</label>
                   <textarea
-                    placeholder="Describe los productos que necesitas cotizar..."
+                    placeholder="Indica el repuesto, marca, modelo del vehículo y cantidad requerida."
                     rows={4}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}

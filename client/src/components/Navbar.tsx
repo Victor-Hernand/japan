@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/data";
 
-const NAV_ITEMS = ["Inicio", "Catálogo", "Nosotros", "Marcas", "Contacto"];
+const NAV_ITEMS = ["Inicio", "Catálogo", "Nosotros", "Marcas", "Sectores", "Contacto"];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +57,7 @@ export default function Navbar() {
           className="hidden lg:flex items-center gap-2 bg-red-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors shadow-sm"
         >
           <MessageCircle className="w-4 h-4" />
-          COTIZAR
+          Cotizar ahora
         </a>
 
         {/* Mobile Toggle */}
@@ -86,7 +86,7 @@ export default function Navbar() {
               className="flex items-center justify-center gap-2 bg-red-600 text-white px-5 py-3 rounded-lg text-sm font-semibold mt-3"
             >
               <MessageCircle className="w-4 h-4" />
-              COTIZAR POR WHATSAPP
+              Cotiza por WhatsApp
             </a>
           </div>
         </div>

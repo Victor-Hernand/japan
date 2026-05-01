@@ -1,6 +1,6 @@
 /* AboutUs — Light theme: white bg, cards with borders, red icons */
-import { Shield, Heart, Eye, Lightbulb, Star, Package, Quote } from "lucide-react";
-import { VALUES, IMAGES } from "@/lib/data";
+import { Shield, Heart, Eye, Lightbulb, Star, Package, Quote, MessageCircle } from "lucide-react";
+import { VALUES, IMAGES, WHATSAPP_NUMBER } from "@/lib/data";
 
 const VALUE_ICONS = [Shield, Heart, Eye, Lightbulb, Star];
 
@@ -14,10 +14,10 @@ export default function AboutUs() {
             Nosotros
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            ¿Por qué <span className="text-red-600 italic">Japan HN</span>?
+            ¿Por qué elegir <span className="text-red-600 italic">Japan HN</span> como tu proveedor de repuestos japoneses?
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            Somos una empresa del Grupo CAP Honduras, fundada en 2025, dedicada a la distribución B2B de repuestos japoneses de calidad superior para el mercado hondureño.
+            Somos parte del Grupo CAP Honduras, especializados en la distribución B2B de repuestos japoneses de alta calidad, ofreciendo soluciones confiables y competitivas para el mercado hondureño.
           </p>
         </div>
 
@@ -36,9 +36,25 @@ export default function AboutUs() {
                 <Package className="w-6 h-6 text-red-600" />
               </div>
               <div>
-                <h4 className="font-bold text-gray-900 mb-1">Importadores Directos</h4>
-                <p className="text-gray-500 text-sm">Conexión directa con fábricas japonesas para garantizar calidad y precios competitivos.</p>
+                <h4 className="font-bold text-gray-900 mb-1">Importadores directos</h4>
+                <p className="text-gray-500 text-sm">Relación directa con fabricantes japoneses que nos permite garantizar repuestos originales, calidad certificada y precios competitivos para el mercado hondureño.</p>
               </div>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-6 bg-red-50 border border-red-100 rounded-xl p-6 text-center">
+              <p className="text-gray-700 text-sm mb-4">
+                ¿Buscas un proveedor confiable de repuestos japoneses? Cotiza con nosotros ahora.
+              </p>
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-red-700 transition-all shadow-lg shadow-red-600/20"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Solicitar cotización
+              </a>
             </div>
           </div>
 

@@ -32,36 +32,36 @@ export const GALLERY_IMAGES = [
 ];
 
 export const BRANDS = [
-  { name: "KYB", desc: "Líder mundial en amortiguadores y sistemas de suspensión", logo: IMAGES.logoKyb },
-  { name: "555", desc: "Especialista en componentes de motor y suspensión", logo: IMAGES.logo555 },
-  { name: "TRC", desc: "Fabricante de brazos y componentes de suspensión", logo: null },
-  { name: "TZK", desc: "Repuestos de alto rendimiento para motores y sistemas mecánicos", logo: null },
-  { name: "NPW", desc: "Proveedor de bujes y componentes de suspensión", logo: null },
-  { name: "KOYO", desc: "Rodamientos y componentes de transmisión de precisión", logo: null },
-  { name: "MRK", desc: "Especialista en piezas de dirección y suspensión", logo: null },
-  { name: "FIC", desc: "Repuestos de alto estándar para sistemas hidráulicos y motores", logo: null },
+  { name: "KYB", desc: "Líder mundial en amortiguadores y sistemas de suspensión, reconocida por su durabilidad y desempeño en vehículos japoneses.", logo: IMAGES.logoKyb },
+  { name: "555", desc: "Marca japonesa especializada en componentes de dirección y suspensión, reconocida por su precisión y confiabilidad.", logo: IMAGES.logo555 },
+  { name: "TRC", desc: "Fabricante japonés de componentes de suspensión diseñados para alto rendimiento y uso continuo.", logo: null },
+  { name: "TZK", desc: "Repuestos japoneses de alto rendimiento para sistemas mecánicos, enfocados en durabilidad y eficiencia operativa.", logo: null },
+  { name: "NPW", desc: "Especialistas en bujes y componentes de suspensión con alta resistencia al desgaste en condiciones exigentes.", logo: null },
+  { name: "KOYO", desc: "Rodamientos japoneses de alta precisión utilizados en sistemas de transmisión y rotación.", logo: null },
+  { name: "MRK", desc: "Fabricante japonés de piezas de recambio para suspensión y dirección, enfocado en confiabilidad y ajuste preciso.", logo: null },
+  { name: "FIC", desc: "Repuestos japoneses de alto estándar para sistemas hidráulicos y componentes mecánicos seleccionados.", logo: null },
 ];
 
 export const STATS = [
-  { value: 1, suffix: "+", label: "Año de Experiencia" },
-  { value: 47, suffix: "+", label: "Clientes Activos" },
-  { value: 471, suffix: "+", label: "Productos Disponibles" },
-  { value: 7, suffix: "", label: "Marcas Japonesas" },
+  { value: 1, prefix: "+", suffix: "", label: "Año de Experiencia" },
+  { value: 47, prefix: "+", suffix: "", label: "Clientes Activos" },
+  { value: 471, prefix: "+", suffix: "", label: "Productos Disponibles" },
+  { value: 7, prefix: "", suffix: "", label: "Marcas Japonesas" },
 ];
 
 export const VALUES = [
-  { title: "Calidad", desc: "Productos confiables y duraderos que superan expectativas." },
-  { title: "Compromiso", desc: "El cliente en el centro de nuestras decisiones." },
-  { title: "Transparencia", desc: "Honestidad y claridad en procesos, precios y comunicaciones." },
-  { title: "Innovación", desc: "Nuevas soluciones que responden a las tendencias del mercado." },
-  { title: "Excelencia", desc: "Transformamos cada desafío en oportunidades de crecimiento." },
+  { title: "Calidad", desc: "Repuestos japoneses seleccionados por su durabilidad, desempeño y confiabilidad en uso profesional." },
+  { title: "Compromiso", desc: "Compromiso real con nuestros clientes B2B, brindando atención rápida, asesoría técnica y seguimiento postventa." },
+  { title: "Transparencia", desc: "Procesos claros, precios justos y comunicación directa en cada cotización y entrega." },
+  { title: "Innovación", desc: "Incorporamos continuamente nuevas marcas y soluciones que responden a la evolución del mercado automotriz." },
+  { title: "Excelencia", desc: "Enfocados en la mejora continua para convertir cada operación en una experiencia eficiente y confiable." },
 ];
 
 export const CITIES = [
-  { name: "Tegucigalpa", desc: "Cobertura completa en la capital" },
-  { name: "San Pedro Sula", desc: "Distribución en la zona norte" },
-  { name: "La Ceiba", desc: "Cobertura en la costa atlántica" },
-  { name: "Comayagua", desc: "Centro del país" },
+  { name: "Tegucigalpa", desc: "Entregas rápidas y cobertura completa en Tegucigalpa y alrededores." },
+  { name: "San Pedro Sula", desc: "Distribución eficiente en San Pedro Sula y la zona norte del país." },
+  { name: "La Ceiba", desc: "Cobertura logística en La Ceiba y la costa atlántica." },
+  { name: "Comayagua", desc: "Entregas estratégicas en Comayagua y el centro del país." },
 ];
 
 export const CATALOG_TABS = [
@@ -101,24 +101,24 @@ export const CATALOG_TABS = [
 
 export const FEATURED_PRODUCTS = [
   {
-    badge: "Más Vendido",
+    badge: "Alta rotación",
     brand: "KYB",
     title: "Amortiguadores KYB",
-    desc: "Rendimiento, durabilidad y tecnología avanzada para todo tipo de vehículos.",
+    desc: "Amortiguadores japoneses diseñados para mayor estabilidad, confort y durabilidad en uso intensivo.",
     image: IMAGES.kybAmortiguadores,
   },
   {
-    badge: "Calidad Premium",
+    badge: "Calidad premium japonesa",
     brand: "555",
     title: "Terminal de Dirección 555",
-    desc: "Precisión japonesa y confiabilidad para sistemas de dirección.",
+    desc: "Componentes de dirección 555 con ajuste preciso y alta resistencia al desgaste, ideales para uso profesional.",
     image: IMAGES.terminal555,
   },
   {
-    badge: "Alta Demanda",
+    badge: "Alta demanda",
     brand: "555",
     title: "Rótula Superior 555",
-    desc: "Resistencia y seguridad como sello distintivo para suspensión.",
+    desc: "Rótulas 555 de alta resistencia, diseñadas para soportar trabajo pesado y maximizar la vida útil de la suspensión.",
     image: IMAGES.rotula555,
   },
 ];

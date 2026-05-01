@@ -2,7 +2,7 @@
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { BRANDS, PHONE_DISPLAY, PHONE_TEL, EMAIL, WHATSAPP_NUMBER } from "@/lib/data";
 
-const NAV_ITEMS = ["Inicio", "Catálogo", "Nosotros", "Marcas", "Contacto"];
+const NAV_ITEMS = ["Catálogo", "Marcas", "Nosotros", "Contacto", "Inicio"];
 
 export default function Footer() {
   const scrollTo = (id: string) => {
@@ -22,7 +22,7 @@ export default function Footer() {
               <span className="text-2xl font-black text-red-500">HN</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Calidad japonesa garantizada en cada pieza
+              Distribución B2B de repuestos japoneses en Honduras
             </p>
             <div className="flex items-center gap-3">
               <a href="#" className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors" aria-label="Facebook">
@@ -69,7 +69,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm">
                 <MapPin className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">Barrio Guacerique, Bulevar Comunidad Europea, frente a Plaza Aire Frío</span>
+                <span className="text-gray-400">
+                  Barrio Guacerique, Bulevar Comunidad Europea
+                  <br />
+                  Frente a Plaza Aire Frío, Tegucigalpa
+                </span>
               </li>
               <li>
                 <a href={`tel:${PHONE_TEL}`} className="flex items-center gap-2 text-sm text-gray-400 hover:text-red-400 transition-colors">
@@ -87,13 +91,28 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Discreet CTA */}
+        <div className="border-t border-gray-800 pt-6 mb-4 text-center">
+          <p className="text-gray-400 text-sm">
+            ¿Buscas un proveedor confiable?{" "}
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-red-400 hover:text-red-300 font-semibold transition-colors"
+            >
+              Cotiza por WhatsApp
+            </a>
+          </p>
+        </div>
+
         {/* Bottom */}
-        <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-xs">
             © 2026 Japan HN — Grupo CAP Honduras. Todos los derechos reservados.
           </p>
           <p className="text-gray-600 text-xs">
-            Calidad japonesa garantizada en cada pieza.
+            Distribución B2B de repuestos japoneses en Honduras
           </p>
         </div>
       </div>

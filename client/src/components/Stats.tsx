@@ -2,12 +2,12 @@
 import { STATS } from "@/lib/data";
 import { useCountUp } from "@/hooks/useCountUp";
 
-function StatItem({ value, suffix, label }: { value: number; suffix: string; label: string }) {
+function StatItem({ value, prefix, suffix, label }: { value: number; prefix?: string; suffix?: string; label: string }) {
   const { count, ref } = useCountUp(value, 2000);
   return (
     <div ref={ref} className="text-center py-8 px-4">
       <div className="text-4xl lg:text-5xl font-black text-red-600 mb-2">
-        {count}{suffix}
+        {prefix}{count}{suffix}
       </div>
       <div className="text-xs font-bold tracking-[0.15em] text-gray-500 uppercase">{label}</div>
     </div>

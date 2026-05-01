@@ -1,5 +1,5 @@
 /* FeaturedProducts — Light theme: white bg, cards with border, red badges */
-import { ArrowRight } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { FEATURED_PRODUCTS, WHATSAPP_NUMBER } from "@/lib/data";
 
 export default function FeaturedProducts() {
@@ -12,10 +12,10 @@ export default function FeaturedProducts() {
             Destacados
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Productos <span className="text-red-600 italic">Estrella</span>
+            Productos <span className="text-red-600 italic">estrella</span> para uso profesional
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            Los productos más solicitados por nuestros clientes B2B, respaldados por marcas de clase mundial.
+            Los repuestos más demandados por distribuidores, respaldados por marcas japonesas de clase mundial.
           </p>
         </div>
 
@@ -52,10 +52,10 @@ export default function FeaturedProducts() {
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola, me interesa cotizar: ${product.title}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-red-600 text-sm font-bold hover:gap-3 transition-all"
+                  className="inline-flex items-center justify-center gap-1.5 w-full bg-red-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-red-700 transition-all"
                 >
-                  Solicitar Cotización
-                  <ArrowRight className="w-4 h-4" />
+                  <MessageCircle className="w-4 h-4" />
+                  Cotizar este producto
                 </a>
               </div>
             </div>

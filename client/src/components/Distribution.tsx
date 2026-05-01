@@ -1,6 +1,6 @@
 /* Distribution — Light theme: white bg, cards with borders */
-import { MapPin, Truck, Clock } from "lucide-react";
-import { CITIES } from "@/lib/data";
+import { MapPin, Truck, Clock, MessageCircle, ShieldCheck, Headphones, PackageCheck } from "lucide-react";
+import { CITIES, WHATSAPP_NUMBER } from "@/lib/data";
 
 export default function Distribution() {
   return (
@@ -13,10 +13,10 @@ export default function Distribution() {
               Cobertura Nacional
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              Distribución en <span className="text-red-600 italic">Honduras</span>
+              Distribución nacional de repuestos en <span className="text-red-600 italic">Honduras</span>
             </h2>
             <p className="text-gray-500 mb-8 leading-relaxed">
-              Nuestra red de distribución cubre las principales ciudades de Honduras, garantizando entregas rápidas y eficientes para tu negocio.
+              Nuestra red de distribución cubre las principales ciudades de Honduras, garantizando entregas rápidas, seguras y confiables para talleres, flotas y distribuidores.
             </p>
 
             <div className="space-y-3">
@@ -43,12 +43,12 @@ export default function Distribution() {
               <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Truck className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-black text-gray-900 mb-3">Envíos a Todo el País</h3>
+              <h3 className="text-xl font-black text-gray-900 mb-3">Envíos a todo el país</h3>
               <p className="text-gray-500 text-sm mb-8 max-w-sm mx-auto">
-                Realizamos envíos a todas las ciudades de Honduras. Consulta tiempos de entrega y condiciones para tu zona.
+                Realizamos envíos a todas las ciudades de Honduras mediante operadores confiables. Consulta tiempos de entrega y condiciones según tu ubicación.
               </p>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-white border border-gray-200 rounded-xl p-5">
                   <div className="flex items-center justify-center gap-1 mb-2">
                     <Clock className="w-4 h-4 text-red-600" />
@@ -64,7 +64,35 @@ export default function Distribution() {
                   <span className="text-xs font-medium text-gray-500">Resto del país</span>
                 </div>
               </div>
+
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-red-700 transition-all shadow-lg shadow-red-600/20"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Solicitar cotización
+              </a>
             </div>
+          </div>
+        </div>
+
+        {/* Trust signals */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 reveal">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-red-600" />
+            <span>Envíos seguros</span>
+          </div>
+          <span className="text-gray-300">·</span>
+          <div className="flex items-center gap-2">
+            <Headphones className="w-4 h-4 text-red-600" />
+            <span>Atención personalizada</span>
+          </div>
+          <span className="text-gray-300">·</span>
+          <div className="flex items-center gap-2">
+            <PackageCheck className="w-4 h-4 text-red-600" />
+            <span>Seguimiento de pedidos</span>
           </div>
         </div>
       </div>

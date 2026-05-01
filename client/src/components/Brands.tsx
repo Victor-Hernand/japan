@@ -1,5 +1,6 @@
 /* Brands — Light theme: gray-50 bg, white cards, marquee */
-import { BRANDS } from "@/lib/data";
+import { MessageCircle } from "lucide-react";
+import { BRANDS, WHATSAPP_NUMBER } from "@/lib/data";
 
 export default function Brands() {
   return (
@@ -8,13 +9,13 @@ export default function Brands() {
         {/* Header */}
         <div className="text-center mb-12 reveal">
           <span className="inline-block px-4 py-1.5 bg-red-50 text-red-600 text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-4 border border-red-100">
-            Alianzas Estratégicas
+            Alianzas que nos permiten garantizar calidad, disponibilidad y precios
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Marcas <span className="text-red-600 italic">Japonesas</span>
+            Marcas <span className="text-red-600 italic">japonesas</span> líderes en autopartes
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            Trabajamos con las marcas más reconocidas a nivel internacional en la industria de autopartes japonesas.
+            Alianzas estratégicas con fabricantes japoneses reconocidos por su calidad, durabilidad y desempeño en uso profesional.
           </p>
         </div>
 
@@ -50,6 +51,25 @@ export default function Brands() {
               </span>
             ))}
           </div>
+        </div>
+
+        {/* Trust + CTA */}
+        <div className="mt-12 text-center reveal">
+          <p className="text-gray-500 text-sm max-w-2xl mx-auto mb-8">
+            Todas nuestras marcas cumplen con estándares internacionales de calidad y son utilizadas por distribuidores que priorizan durabilidad y confianza.
+          </p>
+          <p className="text-gray-700 text-sm mb-4">
+            ¿Quieres cotizar productos de alguna de estas marcas?
+          </p>
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-red-700 transition-all shadow-lg shadow-red-600/20"
+          >
+            <MessageCircle className="w-4 h-4" />
+            Solicitar cotización
+          </a>
         </div>
       </div>
     </section>
