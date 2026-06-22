@@ -31,6 +31,14 @@ export const GALLERY_IMAGES = [
   { src: "/images/gallery-12.jpeg", alt: "Producto Japan HN 12" },
 ];
 
+export const BODEGA_IMAGES = [
+  { src: "/images/bodega-03.jpg", alt: "Equipo de Japan HN en la bodega de repuestos" },
+  { src: "/images/bodega-05.jpg", alt: "Inventario de amortiguadores KYB en bodega" },
+  { src: "/images/bodega-02.jpg", alt: "Estanterías con repuestos KYB y 555 en bodega" },
+  { src: "/images/bodega-04.jpg", alt: "Operación logística con montacargas en bodega" },
+  { src: "/images/bodega-01.jpg", alt: "Preparación y empaque de repuestos 555 Made in Japan" },
+];
+
 export const BRANDS = [
   { name: "KYB", desc: "Líder mundial en amortiguadores y sistemas de suspensión, reconocida por su durabilidad y desempeño en vehículos japoneses.", logo: IMAGES.logoKyb },
   { name: "555", desc: "Marca japonesa especializada en componentes de dirección y suspensión, reconocida por su precisión y confiabilidad.", logo: IMAGES.logo555 },

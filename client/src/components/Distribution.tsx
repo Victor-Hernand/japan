@@ -1,6 +1,6 @@
 /* Distribution — Light theme: white bg, cards with borders */
 import { MapPin, Truck, Clock, MessageCircle, ShieldCheck, Headphones, PackageCheck } from "lucide-react";
-import { CITIES, WHATSAPP_NUMBER } from "@/lib/data";
+import { CITIES, WHATSAPP_NUMBER, BODEGA_IMAGES } from "@/lib/data";
 
 export default function Distribution() {
   return (
@@ -75,6 +75,36 @@ export default function Distribution() {
                 Solicitar cotización
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Bodega photo mosaic */}
+        <div className="mt-16 reveal">
+          <div className="text-center mb-8">
+            <span className="inline-block px-4 py-1.5 bg-red-50 text-red-600 text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-4 border border-red-100">
+              Nuestra Bodega
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-black text-gray-900">
+              Inventario y equipo <span className="text-red-600 italic">listos para ti</span>
+            </h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:[grid-template-rows:repeat(2,minmax(0,1fr))]">
+            {BODEGA_IMAGES.map((img, i) => (
+              <div
+                key={img.src}
+                className={`relative rounded-xl overflow-hidden group border border-gray-200 ${
+                  i === 0 ? "col-span-2 row-span-2 aspect-square md:aspect-auto" : "aspect-[4/3]"
+                }`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+              </div>
+            ))}
           </div>
         </div>
 
