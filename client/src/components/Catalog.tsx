@@ -1,7 +1,8 @@
 /* Catalog — Light theme: gray-50 bg, white cards, red accents */
 import { useState } from "react";
-import { CheckCircle, MessageCircle } from "lucide-react";
-import { CATALOG_TABS, WHATSAPP_NUMBER } from "@/lib/data";
+import { CheckCircle } from "lucide-react";
+import { CATALOG_TABS } from "@/lib/data";
+import WhatsAppLink from "./WhatsAppLink";
 
 export default function Catalog() {
   const [activeTab, setActiveTab] = useState(0);
@@ -65,15 +66,9 @@ export default function Catalog() {
                 </li>
               ))}
             </ul>
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola, me interesa cotizar productos de ${tab.title}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-red-700 transition-all shadow-lg shadow-red-600/20"
-            >
-              <MessageCircle className="w-4 h-4" />
+            <WhatsAppLink message={`Hola, me interesa cotizar productos de ${tab.title}`}>
               COTIZAR {tab.title.toUpperCase()}
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
       </div>

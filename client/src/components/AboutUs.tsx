@@ -1,6 +1,7 @@
 /* AboutUs — Light theme: white bg, cards with borders, red icons */
-import { Shield, Heart, Eye, Lightbulb, Star, Package, Quote, MessageCircle } from "lucide-react";
-import { VALUES, IMAGES, WHATSAPP_NUMBER } from "@/lib/data";
+import { Shield, Heart, Eye, Lightbulb, Star, Package, Quote, Target, Compass } from "lucide-react";
+import { VALUES, IMAGES, ABOUT_PARAGRAPHS, MISSION, VISION } from "@/lib/data";
+import WhatsAppLink from "./WhatsAppLink";
 
 const VALUE_ICONS = [Shield, Heart, Eye, Lightbulb, Star];
 
@@ -40,26 +41,19 @@ export default function AboutUs() {
                 <p className="text-gray-500 text-sm">Relación directa con fabricantes japoneses que nos permite garantizar repuestos originales, calidad certificada y precios competitivos para el mercado hondureño.</p>
               </div>
             </div>
-
-            {/* CTA */}
-            <div className="mt-6 bg-red-50 border border-red-100 rounded-xl p-6 text-center">
-              <p className="text-gray-700 text-sm mb-4">
-                ¿Buscas un proveedor confiable de repuestos japoneses? Cotiza con nosotros ahora.
-              </p>
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-red-700 transition-all shadow-lg shadow-red-600/20"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Solicitar cotización
-              </a>
-            </div>
           </div>
 
-          {/* Right: Values */}
+          {/* Right: Sobre Nosotros + Valores */}
           <div className="reveal-right">
+            <h3 className="text-2xl font-black text-gray-900 mb-4">Sobre Nosotros</h3>
+            <div className="space-y-4 mb-10">
+              {ABOUT_PARAGRAPHS.map((paragraph) => (
+                <p key={paragraph} className="text-gray-600 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
             <h3 className="text-2xl font-black text-gray-900 mb-6">Nuestros Valores</h3>
             <div className="space-y-3">
               {VALUES.map((val, i) => {
@@ -83,6 +77,24 @@ export default function AboutUs() {
           </div>
         </div>
 
+        {/* Misión y Visión */}
+        <div className="mt-16 grid md:grid-cols-2 gap-6 reveal">
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 hover:border-red-200 transition-colors">
+            <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
+              <Target className="w-6 h-6 text-red-600" />
+            </div>
+            <h3 className="text-xl font-black text-gray-900 mb-3">Misión</h3>
+            <p className="text-gray-600 leading-relaxed">{MISSION}</p>
+          </div>
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 hover:border-red-200 transition-colors">
+            <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-4">
+              <Compass className="w-6 h-6 text-red-600" />
+            </div>
+            <h3 className="text-xl font-black text-gray-900 mb-3">Visión</h3>
+            <p className="text-gray-600 leading-relaxed">{VISION}</p>
+          </div>
+        </div>
+
         {/* Testimonial */}
         <div className="mt-16 reveal">
           <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 lg:p-10 max-w-4xl mx-auto relative">
@@ -98,6 +110,11 @@ export default function AboutUs() {
                 <div className="font-bold text-gray-900 text-sm">Carlos Sagastume</div>
                 <div className="text-gray-500 text-xs">Inversiones A y M</div>
               </div>
+            </div>
+            <div className="mt-6 pl-8">
+              <WhatsAppLink variant="secondary" message="Hola, quiero conocer más sobre Japan HN.">
+                Hablar con un asesor
+              </WhatsAppLink>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 /* FeaturedProducts — Light theme: white bg, cards with border, red badges */
 import { MessageCircle } from "lucide-react";
-import { FEATURED_PRODUCTS, WHATSAPP_NUMBER } from "@/lib/data";
+import { FEATURED_PRODUCTS } from "@/lib/data";
+import WhatsAppLink from "./WhatsAppLink";
 
 export default function FeaturedProducts() {
   return (
@@ -48,15 +49,12 @@ export default function FeaturedProducts() {
               <div className="p-5">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{product.title}</h3>
                 <p className="text-gray-500 text-sm mb-4">{product.desc}</p>
-                <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola, me interesa cotizar: ${product.title}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 w-full bg-red-600 text-white text-sm font-bold py-2.5 rounded-lg hover:bg-red-700 transition-all"
+                <WhatsAppLink
+                  className="justify-center w-full py-2.5 px-0 shadow-none"
+                  message={`Hola, me interesa cotizar: ${product.title}`}
                 >
-                  <MessageCircle className="w-4 h-4" />
                   Cotizar este producto
-                </a>
+                </WhatsAppLink>
               </div>
             </div>
           ))}

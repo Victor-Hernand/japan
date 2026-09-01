@@ -1,15 +1,16 @@
 /* Contact — Light theme: gray-50 bg, white cards */
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from "lucide-react";
-import { PHONE_DISPLAY, PHONE_TEL, EMAIL, WHATSAPP_NUMBER } from "@/lib/data";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL } from "@/lib/data";
+import { whatsappUrl, WhatsAppIcon } from "./WhatsAppLink";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Hola, soy ${form.name}.%0A%0AEmail: ${form.email}%0ATeléfono: ${form.phone}%0A%0A${form.message}`;
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+    const text = `Hola, soy ${form.name}.\n\nEmail: ${form.email}\nTeléfono: ${form.phone}\n\n${form.message}`;
+    window.open(whatsappUrl(text), "_blank");
   };
 
   return (
@@ -76,12 +77,12 @@ export default function Contact() {
             </div>
 
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 bg-green-500 text-white rounded-xl p-5 hover:bg-green-600 transition-colors"
             >
-              <MessageCircle className="w-5 h-5" />
+              <WhatsAppIcon className="w-5 h-5" />
               <div>
                 <h4 className="font-bold text-sm">WhatsApp directo para cotizaciones</h4>
                 <p className="text-green-100 text-xs">Respuesta inmediata</p>

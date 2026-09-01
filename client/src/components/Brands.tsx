@@ -1,6 +1,6 @@
 /* Brands — Light theme: gray-50 bg, white cards, marquee */
-import { MessageCircle } from "lucide-react";
-import { BRANDS, WHATSAPP_NUMBER } from "@/lib/data";
+import { BRANDS } from "@/lib/data";
+import WhatsAppLink from "./WhatsAppLink";
 
 export default function Brands() {
   return (
@@ -58,18 +58,12 @@ export default function Brands() {
           <p className="text-gray-500 text-sm max-w-2xl mx-auto mb-8">
             Todas nuestras marcas cumplen con estándares internacionales de calidad y son utilizadas por distribuidores que priorizan durabilidad y confianza.
           </p>
-          <p className="text-gray-700 text-sm mb-4">
-            ¿Quieres cotizar productos de alguna de estas marcas?
-          </p>
-          <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-red-700 transition-all shadow-lg shadow-red-600/20"
+          <WhatsAppLink
+            variant="secondary"
+            message="Hola, quiero cotizar productos de una de sus marcas."
           >
-            <MessageCircle className="w-4 h-4" />
-            Solicitar cotización
-          </a>
+            ¿Quieres cotizar productos de alguna de estas marcas?
+          </WhatsAppLink>
         </div>
       </div>
     </section>

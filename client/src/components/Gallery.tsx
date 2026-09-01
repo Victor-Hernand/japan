@@ -1,7 +1,11 @@
 /* Gallery — Light theme: gray-50 bg, white card overlays */
+import { useState } from "react";
 import { GALLERY_IMAGES } from "@/lib/data";
+import Lightbox from "./Lightbox";
 
 export default function Gallery() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section id="galeria" className="py-20 bg-gray-50">
       <div className="container">
@@ -21,10 +25,13 @@ export default function Gallery() {
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {GALLERY_IMAGES.map((img, i) => (
-            <div
+            <button
               key={i}
-              className="reveal relative rounded-lg overflow-hidden group cursor-pointer aspect-[3/4] border border-gray-200"
+              type="button"
+              onClick={() => setOpenIndex(i)}
+              className="reveal relative rounded-lg overflow-hidden group cursor-pointer aspect-[3/4] border border-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2"
               style={{ transitionDelay: `${(i % 4) * 50}ms` }}
+              aria-label={`Ampliar: ${img.alt}`}
             >
               <img
                 src={img.src}
@@ -37,9 +44,11 @@ export default function Gallery() {
                   Ver Detalle
                 </span>
               </div>
-            </div>
+            </button>
           ))}
         </div>
+
+        <Lightbox images={GALLERY_IMAGES} index={openIndex} onIndexChange={setOpenIndex} />
       </div>
     </section>
   );
