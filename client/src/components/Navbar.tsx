@@ -1,7 +1,9 @@
 /* Navbar — Light theme: white bg, dark text, red CTA */
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle } from "lucide-react";
-import { WHATSAPP_NUMBER } from "@/lib/data";
+import { Menu, X } from "lucide-react";
+import { IMAGES } from "@/lib/data";
+import SocialIcons from "./SocialIcons";
+import WhatsAppLink from "./WhatsAppLink";
 
 const NAV_ITEMS = ["Inicio", "Catálogo", "Nosotros", "Marcas", "Sectores", "Contacto"];
 
@@ -30,9 +32,14 @@ export default function Navbar() {
     }`}>
       <div className="container flex items-center justify-between py-3">
         {/* Logo */}
-        <button onClick={() => scrollTo("Inicio")} className="flex items-center gap-0">
-          <span className="text-2xl font-black tracking-tight text-gray-900">JAPAN</span>
-          <span className="text-2xl font-black tracking-tight text-red-600 ml-1">HN</span>
+        <button onClick={() => scrollTo("Inicio")} className="flex items-center" aria-label="Japan HN — Inicio">
+          <img
+            src={IMAGES.logoJapanHn}
+            alt="Japan HN"
+            className="h-10 lg:h-12 w-auto"
+            width={533}
+            height={246}
+          />
         </button>
 
         {/* Desktop Nav */}
@@ -49,16 +56,14 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <a
-          href={`https://wa.me/${WHATSAPP_NUMBER}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden lg:flex items-center gap-2 bg-red-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors shadow-sm"
-        >
-          <MessageCircle className="w-4 h-4" />
-          Cotizar ahora
-        </a>
+        {/* Redes + CTA */}
+        <div className="hidden lg:flex items-center gap-4">
+          <SocialIcons variant="navbar" />
+          <span className="w-px h-5 bg-gray-200" />
+          <WhatsAppLink className="px-5 py-2.5 font-semibold shadow-sm">
+            Cotizar ahora
+          </WhatsAppLink>
+        </div>
 
         {/* Mobile Toggle */}
         <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-gray-700 p-2">
@@ -79,15 +84,12 @@ export default function Navbar() {
                 {item}
               </button>
             ))}
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-red-600 text-white px-5 py-3 rounded-lg text-sm font-semibold mt-3"
-            >
-              <MessageCircle className="w-4 h-4" />
+            <WhatsAppLink className="flex justify-center px-5 py-3 font-semibold mt-3 shadow-none">
               Cotiza por WhatsApp
-            </a>
+            </WhatsAppLink>
+            <div className="flex items-center justify-center pt-3">
+              <SocialIcons variant="navbar" />
+            </div>
           </div>
         </div>
       )}

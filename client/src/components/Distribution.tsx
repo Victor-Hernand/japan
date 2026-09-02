@@ -1,6 +1,7 @@
 /* Distribution — Light theme: white bg, cards with borders */
-import { MapPin, Truck, Clock, MessageCircle, ShieldCheck, Headphones, PackageCheck } from "lucide-react";
-import { CITIES, WHATSAPP_NUMBER, BODEGA_IMAGES } from "@/lib/data";
+import { MapPin, Truck, Clock, ShieldCheck, Headphones, PackageCheck } from "lucide-react";
+import { CITIES, BODEGA_IMAGES } from "@/lib/data";
+import WhatsAppLink from "./WhatsAppLink";
 
 export default function Distribution() {
   return (
@@ -65,15 +66,12 @@ export default function Distribution() {
                 </div>
               </div>
 
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-red-700 transition-all shadow-lg shadow-red-600/20"
+              <WhatsAppLink
+                variant="secondary"
+                message="Hola, quiero consultar sobre cobertura y tiempos de entrega."
               >
-                <MessageCircle className="w-4 h-4" />
-                Solicitar cotización
-              </a>
+                Consultar cobertura y tiempos de entrega
+              </WhatsAppLink>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 /* CTA — Light theme: image bg with light overlay, dark text */
-import { MessageCircle, ArrowRight } from "lucide-react";
-import { IMAGES, WHATSAPP_NUMBER } from "@/lib/data";
+import { ArrowRight } from "lucide-react";
+import { IMAGES } from "@/lib/data";
+import WhatsAppLink from "./WhatsAppLink";
 
 export default function CTA() {
   return (
@@ -26,15 +27,12 @@ export default function CTA() {
           Atención B2B · Envíos a nivel nacional · Asesoría experta
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-red-600 text-white px-7 py-3.5 rounded-lg font-bold text-sm hover:bg-red-700 transition-all shadow-lg shadow-red-600/20"
+          <WhatsAppLink
+            className="px-7 py-3.5"
+            message="Hola, quiero cotizar repuestos japoneses para mi negocio."
           >
-            <MessageCircle className="w-4 h-4" />
             Cotiza ahora por WhatsApp
-          </a>
+          </WhatsAppLink>
           <button
             onClick={() => document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" })}
             className="flex items-center gap-2 border-2 border-gray-300 text-gray-700 px-7 py-3.5 rounded-lg font-bold text-sm hover:border-red-600 hover:text-red-600 transition-all bg-white/80"

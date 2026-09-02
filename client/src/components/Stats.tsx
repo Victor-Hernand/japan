@@ -18,7 +18,7 @@ export default function Stats() {
   return (
     <section className="bg-white border-y border-gray-100">
       <div className="container">
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-100">
+        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
           {STATS.map((stat) => (
             <StatItem key={stat.label} {...stat} />
           ))}
