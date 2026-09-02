@@ -43,15 +43,14 @@ export default function Catalog() {
 
         {/* Content */}
         <div className="grid lg:grid-cols-2 gap-8 items-center reveal">
-          <div className="relative rounded-xl overflow-hidden group">
+          <div className="relative rounded-xl overflow-hidden bg-white border border-gray-200 shadow-sm group">
             <img
+              key={tab.id}
               src={tab.image}
-              alt={tab.title}
-              className="w-full h-[300px] sm:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+              alt={`Autopartes japonesas de ${tab.title} — Japan HN`}
+              loading="lazy"
+              className="w-full aspect-square max-h-[480px] mx-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
             />
-            <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-              <span className="text-sm font-bold text-gray-900">{tab.title}</span>
-            </div>
           </div>
 
           <div>

@@ -9,6 +9,10 @@ export const IMAGES = {
   ctaBg: "/images/cta-bg.jpg",
   warehouse: "/images/warehouse.jpg",
   suspension: "/images/suspension.jpg",
+  catSuspension: "/images/cat-suspension-kyb.jpg",
+  catDireccion: "/images/cat-direccion-555.jpg",
+  catMotor: "/images/cat-motor-motormap.jpg",
+  catTransmision: "/images/cat-transmision-toyo.jpg",
   rotula555Tacoma: "/images/rotula-555-tacoma.jpeg",
   terminal555: "/images/terminal-555.jpeg",
   rotula555Hilux: "/images/rotula-555-hilux.jpeg",
@@ -93,7 +97,7 @@ export const CATALOG_TABS = [
     title: "Suspensión",
     desc: "Contamos con una línea completa de componentes de suspensión para todo tipo de vehículos japoneses: Toyota, Nissan, Honda, Mitsubishi y más.",
     items: ["Amortiguadores", "Barras estabilizadoras", "Soportes de motor", "Bujes de suspensión"],
-    image: IMAGES.suspension,
+    image: IMAGES.catSuspension,
   },
   {
     id: "direccion",
@@ -101,7 +105,7 @@ export const CATALOG_TABS = [
     title: "Dirección",
     desc: "Terminales, rótulas y componentes de dirección de precisión japonesa para mantener el control total del vehículo.",
     items: ["Terminales de dirección", "Rótulas superiores e inferiores", "Brazos de dirección", "Cremalleras"],
-    image: IMAGES.suspension,
+    image: IMAGES.catDireccion,
   },
   {
     id: "motor",
@@ -109,7 +113,7 @@ export const CATALOG_TABS = [
     title: "Motor",
     desc: "Piezas de motor de alta calidad para garantizar el rendimiento óptimo de los vehículos japoneses.",
     items: ["Bombas de agua", "Kits de distribución", "Empaques de motor", "Sensores y componentes"],
-    image: IMAGES.suspension,
+    image: IMAGES.catMotor,
   },
   {
     id: "transmision",
@@ -117,7 +121,7 @@ export const CATALOG_TABS = [
     title: "Transmisión",
     desc: "Componentes de transmisión que aseguran una conducción suave y eficiente.",
     items: ["Rodamientos", "Crucetas", "Juntas homocinéticas", "Kits de embrague"],
-    image: IMAGES.suspension,
+    image: IMAGES.catTransmision,
   },
 ];
 
