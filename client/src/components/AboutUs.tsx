@@ -1,5 +1,5 @@
 /* AboutUs — Light theme: white bg, cards with borders, red icons */
-import { Shield, Heart, Eye, Lightbulb, Star, Package, Quote, Target, Compass, History } from "lucide-react";
+import { Shield, Heart, Eye, Lightbulb, Star, Package, Quote, Target, Compass, History, Wrench } from "lucide-react";
 import { VALUES, IMAGES, ABOUT_PARAGRAPHS, HISTORY_PARAGRAPHS, MISSION, VISION, KEY_MESSAGE } from "@/lib/data";
 import WhatsAppLink from "./WhatsAppLink";
 
@@ -127,7 +127,10 @@ export default function AboutUs() {
         </div>
 
         {/* Testimonial */}
-        <div className="mt-16 reveal">
+        <div className="mt-16 reveal relative">
+          <div className="hidden lg:block absolute -left-28 top-1/2 -translate-y-1/2">
+            <Wrench className="w-20 h-20 text-red-600/50 animate-wrench-spin drop-shadow-lg" />
+          </div>
           <div className="text-center mb-8">
             <h3 className="text-2xl sm:text-3xl font-black text-gray-900">
               Nuestros <span className="text-red-600 italic">clientes</span>

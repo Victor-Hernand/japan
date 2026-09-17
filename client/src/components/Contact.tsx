@@ -30,29 +30,31 @@ export default function Contact() {
         </div>
 
         <div className="text-center mb-12 reveal">
-          <div className="flex items-center justify-center gap-2 text-gray-900 font-bold mb-4">
-            <BriefcaseBusiness className="w-5 h-5 text-red-600" />
-            <span>¿Deseas trabajar con nosotros?</span>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="https://recruit.capgrupo.com/aplicar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-red-700"
-            >
-              Aplicar ahora
-              <ExternalLink className="w-4 h-4" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/caphn/posts/?feedView=all"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-bold text-gray-700 transition-colors hover:border-red-600 hover:text-red-600"
-            >
-              <Linkedin className="w-4 h-4" />
-              Ver LinkedIn
-            </a>
+          <div className="bg-white border border-gray-200 rounded-xl p-6 inline-block">
+            <div className="flex items-center justify-center gap-2 text-gray-900 font-bold mb-4">
+              <BriefcaseBusiness className="w-5 h-5 text-red-600" />
+              <span>¿Deseas trabajar con nosotros?</span>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="https://recruit.capgrupo.com/aplicar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-red-700"
+              >
+                Aplicar ahora
+                <ExternalLink className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/caphn/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-bold text-gray-700 transition-colors hover:border-red-600 hover:text-red-600"
+              >
+                <Linkedin className="w-4 h-4" />
+                Ver LinkedIn
+              </a>
+            </div>
           </div>
         </div>
 
