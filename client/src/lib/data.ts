@@ -207,11 +207,6 @@ export const PRODUCT_LINES = [
     desc: "Frenado más suave y uniforme, con menos ruidos, vibraciones y rechinidos. Diseñado para altas temperaturas y con desgaste uniforme desde el inicio.",
     images: [{ src: "/images/producto-disco-freno.jpg", alt: "Disco de freno Fremax" }],
   },
-  {
-    title: "Bota de flecha",
-    desc: "Protege la junta homocinética contra polvo, agua y pérdida de grasa, prolongando la vida útil del sistema de transmisión. Disponible para Toyota Hilux.",
-    images: [{ src: "/images/producto-bota-flecha.jpg", alt: "Bota de flecha Toyota Hilux Maruichi" }],
-  },
 ];
 
 export const WHATSAPP_NUMBER = "50494525175";

@@ -1,6 +1,6 @@
 /* Distribution — Light theme: white bg, cards with borders */
 import { MapPin, Truck, Clock, ShieldCheck, Headphones, PackageCheck } from "lucide-react";
-import { CITIES, BODEGA_IMAGES, IMAGES } from "@/lib/data";
+import { CITIES, BODEGA_IMAGES } from "@/lib/data";
 import WhatsAppLink from "./WhatsAppLink";
 
 export default function Distribution() {
