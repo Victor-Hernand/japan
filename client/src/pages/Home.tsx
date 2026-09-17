@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Catalog from "@/components/Catalog";
+import ProductLines from "@/components/ProductLines";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import Gallery from "@/components/Gallery";
 import AboutUs from "@/components/AboutUs";
@@ -27,6 +28,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <Catalog />
+      <ProductLines />
       <FeaturedProducts />
       <Gallery />
       <AboutUs />

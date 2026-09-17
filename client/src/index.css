@@ -220,3 +220,60 @@ html {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* Animación automática de textos (ver useScrollReveal) */
+.text-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(4px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.7s ease,
+    color 0.3s ease,
+    background-color 0.3s ease;
+  transition-delay: var(--text-reveal-delay, 0ms), var(--text-reveal-delay, 0ms), var(--text-reveal-delay, 0ms), 0ms, 0ms;
+}
+.text-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .text-reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
+/* Flotación suave para imágenes decorativas */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes pulseSoft {
+  0%, 100% { scale: 1; opacity: 1; }
+  50% { scale: 1.08; opacity: 0.6; }
+}
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float 5s ease-in-out 1.2s infinite;
+}
+.animate-pulse-soft {
+  animation: pulseSoft 5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed,
+  .animate-pulse-soft {
+    animation: none;
+  }
+}

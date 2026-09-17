@@ -1,7 +1,7 @@
 /* Contact — Light theme: gray-50 bg, white cards */
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-import { PHONE_DISPLAY, PHONE_TEL, EMAIL } from "@/lib/data";
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL, ADDRESS, SCHEDULE } from "@/lib/data";
 import { whatsappUrl, WhatsAppIcon } from "./WhatsAppLink";
 
 export default function Contact() {
@@ -39,7 +39,7 @@ export default function Contact() {
               <div>
                 <h4 className="font-bold text-gray-900 text-sm">Dirección</h4>
                 <p className="text-gray-500 text-sm mt-1">
-                  Barrio Guacerique, Bulevar Comunidad Europea, frente a Plaza Aire Frío
+                  {ADDRESS}
                 </p>
                 <p className="text-gray-400 text-xs mt-0.5">Tegucigalpa, Honduras</p>
               </div>
@@ -71,8 +71,11 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 text-sm">Horario</h4>
-                <p className="text-gray-500 text-sm mt-1">Lunes a Viernes: 8:00 AM - 5:00 PM</p>
-                <p className="text-gray-500 text-sm">Sábados: 8:00 AM - 12:00 MD</p>
+                <div className="mt-1">
+                  {SCHEDULE.map((line) => (
+                    <p key={line} className="text-gray-500 text-sm">{line}</p>
+                  ))}
+                </div>
               </div>
             </div>
 

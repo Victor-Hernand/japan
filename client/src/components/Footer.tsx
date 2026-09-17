@@ -1,6 +1,6 @@
 /* Footer — Light theme: dark footer for visual anchoring */
-import { Phone, Mail, MapPin } from "lucide-react";
-import { BRANDS, PHONE_DISPLAY, PHONE_TEL, EMAIL, IMAGES } from "@/lib/data";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { BRANDS, PHONE_DISPLAY, PHONE_TEL, EMAIL, IMAGES, SLOGAN, SCHEDULE } from "@/lib/data";
 import SocialIcons from "./SocialIcons";
 import { whatsappUrl, WhatsAppIcon } from "./WhatsAppLink";
 
@@ -26,6 +26,7 @@ export default function Footer() {
               width={533}
               height={246}
             />
+            <p className="text-white text-sm font-semibold mb-1">{SLOGAN}</p>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Distribución B2B de repuestos japoneses en Honduras
             </p>
@@ -84,6 +85,14 @@ export default function Footer() {
                   <Mail className="w-4 h-4 text-red-500" />
                   {EMAIL}
                 </a>
+              </li>
+              <li className="flex items-start gap-2 text-sm">
+                <Clock className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-400">
+                  {SCHEDULE.map((line) => (
+                    <span key={line} className="block">{line}</span>
+                  ))}
+                </span>
               </li>
             </ul>
           </div>
