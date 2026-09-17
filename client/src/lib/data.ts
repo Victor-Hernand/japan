@@ -5,9 +5,11 @@
  * ============================================================ */
 
 export const IMAGES = {
-  heroBg: "/images/hero-bg.jpg",
+  heroBg: "/images/hero-bg-japanhn.jpg",
   ctaBg: "/images/cta-bg.jpg",
   warehouse: "/images/warehouse.jpg",
+  aboutUs: "/images/nosotros-atencion.jpg",
+  aboutPacking: "/images/nosotros-empaque-555.png",
   suspension: "/images/suspension.jpg",
   catSuspension: "/images/cat-suspension-kyb.jpg",
   catDireccion: "/images/cat-direccion-555.jpg",
@@ -45,14 +47,14 @@ export const BODEGA_IMAGES = [
 ];
 
 export const BRANDS = [
-  { name: "KYB", desc: "Líder mundial en amortiguadores y sistemas de suspensión, reconocida por su durabilidad y desempeño en vehículos japoneses.", logo: IMAGES.logoKyb },
-  { name: "555", desc: "Marca japonesa especializada en componentes de dirección y suspensión, reconocida por su precisión y confiabilidad.", logo: IMAGES.logo555 },
-  { name: "TRC", desc: "Fabricante japonés de componentes de suspensión diseñados para alto rendimiento y uso continuo.", logo: null },
-  { name: "TZK", desc: "Repuestos japoneses de alto rendimiento para sistemas mecánicos, enfocados en durabilidad y eficiencia operativa.", logo: null },
-  { name: "NPW", desc: "Especialistas en bujes y componentes de suspensión con alta resistencia al desgaste en condiciones exigentes.", logo: null },
-  { name: "KOYO", desc: "Rodamientos japoneses de alta precisión utilizados en sistemas de transmisión y rotación.", logo: null },
-  { name: "MRK", desc: "Fabricante japonés de piezas de recambio para suspensión y dirección, enfocado en confiabilidad y ajuste preciso.", logo: null },
-  { name: "FIC", desc: "Repuestos japoneses de alto estándar para sistemas hidráulicos y componentes mecánicos seleccionados.", logo: null },
+  { name: "KYB", desc: "Líder mundial en amortiguadores y sistemas de suspensión, reconocida por su rendimiento, durabilidad y tecnología avanzada.", logo: IMAGES.logoKyb },
+  { name: "555", desc: "Especialista en componentes de motor y suspensión, destacada por su precisión japonesa y confiabilidad.", logo: IMAGES.logo555 },
+  { name: "TRC", desc: "Fabricante de brazos y componentes de suspensión, con resistencia y seguridad como sello distintivo.", logo: null },
+  { name: "TZK", desc: "Repuestos de alto rendimiento para motores y sistemas mecánicos, conocidos por su innovación y fiabilidad.", logo: null },
+  { name: "NPW", desc: "Proveedor de bujes y componentes de suspensión, valorado por su durabilidad y estabilidad en el funcionamiento de vehículos.", logo: null },
+  { name: "KOYO", desc: "Reconocida por rodamientos y componentes de transmisión, con precisión, larga vida útil y desempeño confiable.", logo: null },
+  { name: "MRK", desc: "Especialista en piezas de dirección y suspensión, destacando por su resistencia y seguridad en la conducción.", logo: null },
+  { name: "FIC", desc: "Repuestos de alto estándar para sistemas hidráulicos y motores, reconocidos por su innovación y eficiencia.", logo: null },
 ];
 
 export const STATS = [
@@ -61,26 +63,37 @@ export const STATS = [
   { value: 40, prefix: "", suffix: "", label: "Marcas Premium" },
 ];
 
-/** Sobre Nosotros — párrafos de presentación de la empresa */
+/** Slogan oficial */
+export const SLOGAN = "Calidad japonesa garantizada en cada pieza";
+
+/** Mensaje clave de la marca */
+export const KEY_MESSAGE =
+  "Somos la mejor opción porque ofrecemos productos japoneses que combinan precisión, innovación y durabilidad. A diferencia de otras opciones en el mercado, cuidamos cada detalle para asegurar mayor eficiencia y longevidad. Elegirnos significa apostar por soluciones que potencian tu negocio y generan resultados sólidos a largo plazo.";
+
+/** ¿Quiénes somos? — párrafos de presentación de la empresa */
 export const ABOUT_PARAGRAPHS = [
-  "En JAPAN HN nos especializamos en la distribución de repuestos japoneses de calidad premium en Honduras.",
-  "Nacemos con el propósito de ofrecer al mercado una línea de productos confiables, seleccionados para brindar calidad, durabilidad y buen desempeño.",
-  "Más que distribuir repuestos, buscamos ser una empresa en la que nuestros clientes puedan confiar, ofreciendo atención cercana, buen servicio y entregas eficientes a nivel nacional.",
-  "En JAPAN HN, conocemos la importancia de contar con el repuesto correcto cuando se necesita. Por eso trabajamos cada día para ofrecer calidad japonesa y un servicio que responda.",
+  "Somos Japan HN, distribuidores de repuestos japoneses que combinan calidad, precisión y confiabilidad. Creemos que cada pieza tiene el poder de impulsar tu negocio, por eso llevamos productos duraderos y de alto rendimiento directamente a tu negocio.",
+  "Con marcas líderes a nivel internacional, transformamos cada repuesto en confianza, eficiencia y oportunidades de crecimiento, acompañando a tu empresa en cada paso hacia el éxito.",
+];
+
+/** Historia de la empresa */
+export const HISTORY_PARAGRAPHS = [
+  "Nacimos en enero de 2025 enfocados bajo el segmento B2B, especializándonos en repuestos japoneses de calidad superior. Nuestro crecimiento se basa en la pasión por la excelencia, el respeto por los estándares japoneses y el compromiso con nuestros clientes.",
+  "Cada paso que damos refleja nuestra filosofía: mejora continua, confiabilidad y valor sostenido, convirtiéndonos en un aliado estratégico para empresas que buscan respaldo y productos de alto desempeño.",
 ];
 
 export const MISSION =
-  "Ofrecer repuestos japoneses de calidad y un servicio confiable, brindando soluciones oportunas que contribuyan al crecimiento de nuestros clientes y al desarrollo del sector automotriz.";
+  "Aportar valor a las empresas del sector automotriz a través de autopartes de calidad, soluciones eficientes y un soporte especializado que genere confianza, relaciones duraderas y crecimiento sostenible.";
 
 export const VISION =
-  "Ser una distribuidora referente de repuestos japoneses en Honduras, reconocida por la calidad de nuestros productos, la confianza de nuestros clientes y un servicio que responda a las necesidades del mercado automotriz.";
+  "Consolidarnos como la empresa número uno en la distribución de repuestos japoneses, destacada por su prestigio, ética empresarial y constante evolución, impulsando el desarrollo, la plena satisfacción de clientes y socios estratégicos.";
 
 export const VALUES = [
-  { title: "Calidad", desc: "Repuestos japoneses seleccionados por su durabilidad, desempeño y confiabilidad en uso profesional." },
-  { title: "Compromiso", desc: "Compromiso real con nuestros clientes B2B, brindando atención rápida, asesoría técnica y seguimiento postventa." },
-  { title: "Transparencia", desc: "Procesos claros, precios justos y comunicación directa en cada cotización y entrega." },
-  { title: "Innovación", desc: "Incorporamos continuamente nuevas marcas y soluciones que responden a la evolución del mercado automotriz." },
-  { title: "Excelencia", desc: "Enfocados en la mejora continua para convertir cada operación en una experiencia eficiente y confiable." },
+  { title: "Calidad", desc: "Cuidamos cada detalle para ofrecer productos confiables y duraderos, diseñados para acompañar el éxito de nuestros clientes, garantizar su confianza y superar sus expectativas." },
+  { title: "Compromiso", desc: "Ponemos al cliente en el centro de nuestras decisiones, brindando atención responsable, cercana y orientada a cubrir sus necesidades." },
+  { title: "Transparencia", desc: "Actuamos con honestidad y claridad en nuestros procesos, precios y comunicaciones, generando credibilidad en cada relación comercial." },
+  { title: "Innovación", desc: "Buscamos constantemente nuevas soluciones, productos y mejoras que aporten valor y respondan a las tendencias del mercado." },
+  { title: "Excelencia", desc: "Nos esforzamos por ir más allá en todo lo que hacemos, transformando cada desafío en oportunidades de innovación y crecimiento que beneficien a nuestros clientes y al mercado automotriz." },
 ];
 
 export const CITIES = [
@@ -149,12 +162,72 @@ export const FEATURED_PRODUCTS = [
   },
 ];
 
+/** Nuestros productos — líneas principales (images: flyers/fotos; vacío = sin imagen aún) */
+export const PRODUCT_LINES = [
+  {
+    title: "Bujes",
+    desc: "Solución confiable que mejora la estabilidad del vehículo, reduce vibraciones y asegura un funcionamiento eficiente y duradero de la suspensión.",
+    images: [{ src: "/images/producto-bujes-nisto.jpg", alt: "Bujes de tijera Nisto" }],
+  },
+  {
+    title: "Brazos de suspensión",
+    desc: "Mantienen la alineación perfecta de las ruedas, absorben impactos y garantizan una conducción estable, segura y precisa en todo momento.",
+    images: [{ src: "/images/producto-brazo-suspension.jpg", alt: "Brazo de suspensión superior Toyota" }],
+  },
+  {
+    title: "Amortiguadores",
+    desc: "Diseñados para ofrecer control absoluto, máxima estabilidad y una conducción segura y confortable en todo tipo de camino.",
+    images: [{ src: "/images/producto-amortiguador-kyb.jpg", alt: "Amortiguador KYB" }],
+  },
+  {
+    title: "Bomba de agua",
+    desc: "Componente esencial del sistema de enfriamiento que circula el refrigerante para mantener el motor a la temperatura ideal, evitando el sobrecalentamiento y asegurando un funcionamiento eficiente.",
+    images: [{ src: "/images/producto-bomba-agua-npw.jpg", alt: "Bomba de agua NPW" }],
+  },
+  {
+    title: "Cremallera",
+    desc: "Asegura un control preciso y una conducción estable. Convierte el movimiento del volante en la orientación exacta de las ruedas, ofreciendo seguridad, durabilidad y desempeño confiable en todo tipo de caminos.",
+    images: [],
+  },
+  {
+    title: "Master de freno",
+    desc: "Ofrece durabilidad, eficiencia y confiabilidad, asegurando que cada frenada sea precisa y segura para tu vehículo.",
+    images: [],
+  },
+  {
+    title: "Master de embrague",
+    desc: "Garantiza cambios de marcha suaves y precisos, ofreciendo rendimiento confiable y duradero para un manejo seguro y eficiente en todo momento.",
+    images: [
+      { src: "/images/producto-master-embrague-miyaco.jpg", alt: "Bomba madre de clutch Miyaco" },
+      { src: "/images/producto-master-embrague-miyaco-2.jpg", alt: "Bomba de clutch Miyaco" },
+    ],
+  },
+  {
+    title: "Disco de freno",
+    desc: "Frenado más suave y uniforme, con menos ruidos, vibraciones y rechinidos. Diseñado para altas temperaturas y con desgaste uniforme desde el inicio.",
+    images: [{ src: "/images/producto-disco-freno.jpg", alt: "Disco de freno Fremax" }],
+  },
+  {
+    title: "Bota de flecha",
+    desc: "Protege la junta homocinética contra polvo, agua y pérdida de grasa, prolongando la vida útil del sistema de transmisión. Disponible para Toyota Hilux.",
+    images: [{ src: "/images/producto-bota-flecha.jpg", alt: "Bota de flecha Toyota Hilux Maruichi" }],
+  },
+];
+
 export const WHATSAPP_NUMBER = "50494525175";
 /** Formato legible para la UI */
 export const PHONE_DISPLAY = "+504 9452-5175";
 /** Sin espacios para `tel:` */
 export const PHONE_TEL = "+50494525175";
 export const EMAIL = "ventas@japanhn.com";
+
+export const ADDRESS = "Barrio Guacerique, Bulevar Comunidad Europea, frente a Plaza Aire Frío";
+
+export const SCHEDULE = [
+  "Lunes a viernes: 8:00 AM - 5:00 PM",
+  "Sábados: 8:00 AM - 12:00 MD",
+  "Domingos: Cerrado",
+];
 
 /** Redes sociales oficiales de Japan HN */
 export const SOCIALS = [

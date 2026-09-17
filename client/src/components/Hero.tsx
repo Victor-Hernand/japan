@@ -1,17 +1,18 @@
 /* Hero — Light theme: light overlay on image, dark text */
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { IMAGES } from "@/lib/data";
+import { IMAGES, SLOGAN } from "@/lib/data";
 import WhatsAppLink from "./WhatsAppLink";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-end pb-20 pt-32 overflow-hidden">
-      {/* Background image with light overlay */}
+    <section id="inicio" className="relative min-h-screen flex items-center pt-24 pb-20 lg:pt-20 lg:pb-24 overflow-hidden">
+      {/* Background image: completa a la derecha en escritorio, velada en móvil */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 lg:left-auto lg:w-[62%] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${IMAGES.heroBg})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-white/40" />
+      <div className="absolute inset-0 bg-white/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-white lg:from-40% lg:via-white/60 lg:via-55% lg:to-transparent lg:to-75%" />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
 
       <div className="container relative z-10">
         <div className="max-w-2xl">
@@ -27,6 +28,10 @@ export default function Hero() {
             <br />
             <span className="text-red-600 italic">que impulsa tu rentabilidad</span>
           </h1>
+
+          <p className="text-gray-900 text-xl font-bold mb-4">
+            {SLOGAN}
+          </p>
 
           <p className="text-gray-600 text-lg max-w-lg mb-8 leading-relaxed">
             Repuestos japoneses de alta calidad diseñados para mayor durabilidad,

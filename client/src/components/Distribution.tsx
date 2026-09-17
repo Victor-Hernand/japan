@@ -1,6 +1,6 @@
 /* Distribution — Light theme: white bg, cards with borders */
 import { MapPin, Truck, Clock, ShieldCheck, Headphones, PackageCheck } from "lucide-react";
-import { CITIES, BODEGA_IMAGES } from "@/lib/data";
+import { CITIES, BODEGA_IMAGES, IMAGES } from "@/lib/data";
 import WhatsAppLink from "./WhatsAppLink";
 
 export default function Distribution() {
@@ -41,6 +41,12 @@ export default function Distribution() {
           {/* Right */}
           <div className="reveal-right">
             <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 text-center">
+              <img
+                src="/images/bodega-05.jpg"
+                alt="Bodega de repuestos lista para realizar envíos"
+                className="w-full aspect-[16/9] object-cover rounded-xl mb-6"
+                loading="lazy"
+              />
               <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Truck className="w-8 h-8 text-red-600" />
               </div>
