@@ -5,13 +5,10 @@ import WhatsAppLink from "./WhatsAppLink";
 
 export default function FeaturedProducts() {
   return (
-    <section className="py-20 bg-white">
+    <section className="pt-12 pb-20 bg-white">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-12 reveal">
-          <span className="inline-block px-4 py-1.5 bg-red-50 text-red-600 text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-4 border border-red-100">
-            Destacados
-          </span>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
             Productos <span className="text-red-600 italic">estrella</span> para uso profesional
           </h2>

@@ -13,6 +13,8 @@ const TEXT_SELECTOR = [
 const STAGGER_MS = 80;
 const MAX_DELAY_MS = 400;
 
+const REVEAL_SELECTOR = ".reveal, .reveal-left, .reveal-right";
+
 export function useScrollReveal() {
   useEffect(() => {
     const reveal = (entries: IntersectionObserverEntry[], obs: IntersectionObserver) => {
@@ -43,20 +45,24 @@ export function useScrollReveal() {
       });
     };
 
-    document
-      .querySelectorAll(".reveal, .reveal-left, .reveal-right")
-      .forEach((el) => observer.observe(el));
+    const observeReveal = (root: ParentNode) => {
+      root.querySelectorAll<HTMLElement>(REVEAL_SELECTOR).forEach((el) => observer.observe(el));
+    };
+
+    observeReveal(document);
     tagText(document);
 
-    // Contenido que aparece después (pestañas del catálogo, etc.)
-    const mutations = new MutationObserver((records) => {
+    // Contenido que aparece después (pestañas de productos, etc.)
+    const mutations = new MutationObserver((records) =>
       records.forEach((record) =>
         record.addedNodes.forEach((node) => {
           if (!(node instanceof HTMLElement)) return;
+          if (node.matches(REVEAL_SELECTOR)) observer.observe(node);
+          observeReveal(node);
           tagText(node.parentElement ?? node);
         })
-      );
-    });
+      )
+    );
     mutations.observe(document.body, { childList: true, subtree: true });
 
     return () => {

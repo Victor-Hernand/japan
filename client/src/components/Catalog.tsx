@@ -13,9 +13,6 @@ export default function Catalog() {
       <div className="container">
         {/* Header */}
         <div className="text-center mb-12 reveal">
-          <span className="inline-block px-4 py-1.5 bg-red-50 text-red-600 text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-4 border border-red-100">
-            Nuestros Productos
-          </span>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
             Catálogo de <span className="text-red-600 italic">autopartes japonesas</span>
           </h2>
@@ -49,7 +46,7 @@ export default function Catalog() {
               src={tab.image}
               alt={`Autopartes japonesas de ${tab.title} — Japan HN`}
               loading="lazy"
-              className="w-full aspect-square max-h-[480px] mx-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+              className="w-full aspect-square max-h-[320px] mx-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
             />
           </div>
 

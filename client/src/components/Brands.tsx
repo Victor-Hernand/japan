@@ -1,16 +1,12 @@
 /* Brands — Light theme: gray-50 bg, white cards, marquee */
 import { BRANDS } from "@/lib/data";
-import WhatsAppLink from "./WhatsAppLink";
 
 export default function Brands() {
   return (
-    <section id="marcas" className="py-20 bg-gray-50">
+    <section id="marcas" className="pt-12 pb-0 bg-gray-50">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-12 reveal">
-          <span className="inline-block px-4 py-1.5 bg-red-50 text-red-600 text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-4 border border-red-100">
-            Alianzas que nos permiten garantizar calidad, disponibilidad y precios
-          </span>
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
             Marcas <span className="text-red-600 italic">japonesas</span> líderes en autopartes
           </h2>
@@ -39,31 +35,19 @@ export default function Brands() {
           ))}
         </div>
 
-        {/* Marquee */}
-        <div className="overflow-hidden py-6 border-y border-gray-200 reveal">
-          <div className="flex animate-marquee whitespace-nowrap">
+      </div>
+
+      {/* Marquee — ancho completo, fuera del contenedor */}
+      <div className="overflow-hidden py-6 border-y border-white/10 bg-[#111827] reveal">
+        <div className="flex animate-marquee whitespace-nowrap">
             {[...BRANDS, ...BRANDS, ...BRANDS].map((brand, i) => (
               <span
                 key={i}
-                className="mx-8 text-3xl font-black text-gray-200 hover:text-red-200 transition-colors select-none"
+                className="mx-8 text-3xl font-black text-gray-500 hover:text-red-500 transition-colors select-none"
               >
                 {brand.name}
               </span>
             ))}
-          </div>
-        </div>
-
-        {/* Trust + CTA */}
-        <div className="mt-12 text-center reveal">
-          <p className="text-gray-500 text-sm max-w-2xl mx-auto mb-8">
-            Todas nuestras marcas cumplen con estándares internacionales de calidad y son utilizadas por distribuidores que priorizan durabilidad y confianza.
-          </p>
-          <WhatsAppLink
-            variant="secondary"
-            message="Hola, quiero cotizar productos de una de sus marcas."
-          >
-            ¿Quieres cotizar productos de alguna de estas marcas?
-          </WhatsAppLink>
         </div>
       </div>
     </section>
