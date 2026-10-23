@@ -5,7 +5,7 @@ import WhatsAppLink from "./WhatsAppLink";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center pt-24 pb-20 lg:pt-20 lg:pb-24 overflow-hidden">
+    <section id="inicio" className="relative flex items-center pt-24 pb-16 lg:pt-20 lg:pb-12 overflow-hidden">
       {/* Background image: completa a la derecha en escritorio, velada en móvil */}
       <div
         className="absolute inset-0 lg:left-auto lg:w-[62%] bg-cover bg-center bg-no-repeat"

@@ -9,14 +9,14 @@ function StatItem({ value, prefix, suffix, label }: { value: number; prefix?: st
       <div className="text-4xl lg:text-5xl font-black text-red-600 mb-2">
         {prefix}{count}{suffix}
       </div>
-      <div className="text-xs font-bold tracking-[0.15em] text-gray-500 uppercase">{label}</div>
+      <div className="text-xs font-bold tracking-[0.15em] text-gray-300 uppercase">{label}</div>
     </div>
   );
 }
 
 export default function Stats() {
   return (
-    <section className="bg-white border-y border-gray-100">
+    <section className="bg-[#111827] border-y border-white/10">
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
           {STATS.map((stat) => (

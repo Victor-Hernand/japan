@@ -8,14 +8,10 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Catalog from "@/components/Catalog";
-import ProductLines from "@/components/ProductLines";
-import FeaturedProducts from "@/components/FeaturedProducts";
-import Gallery from "@/components/Gallery";
-import AboutUs from "@/components/AboutUs";
+import ProductTabs from "@/components/ProductTabs";
 import Brands from "@/components/Brands";
-import Distribution from "@/components/Distribution";
 import CTA from "@/components/CTA";
-import Contact from "@/components/Contact";
+import Testimonial from "@/components/Testimonial";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -28,14 +24,14 @@ export default function Home() {
       <Hero />
       <Stats />
       <Catalog />
-      <ProductLines />
-      <FeaturedProducts />
-      <Gallery />
-      <AboutUs />
+      <section className="py-16 bg-[#111827]">
+        <div className="container">
+          <ProductTabs />
+        </div>
+      </section>
       <Brands />
-      <Distribution />
       <CTA />
-      <Contact />
+      <Testimonial />
       <Footer />
     </div>
   );

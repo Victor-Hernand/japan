@@ -1,11 +1,12 @@
 /* Navbar — Light theme: white bg, dark text, red CTA */
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useLocation } from "wouter";
 import { IMAGES } from "@/lib/data";
 import SocialIcons from "./SocialIcons";
 import WhatsAppLink from "./WhatsAppLink";
 
-const NAV_ITEMS = ["Inicio", "Catálogo", "Nosotros", "Marcas", "Sectores", "Contacto"];
+const NAV_ITEMS = ["Inicio", "Nosotros", "Catálogo", "Marcas", "Contacto"];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +18,22 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [, setLocation] = useLocation();
+
   const scrollTo = (id: string) => {
     setIsOpen(false);
-    const el = document.getElementById(id.toLowerCase());
+    const key = id.toLowerCase();
+    if (key === "contacto" || key === "nosotros") {
+      setLocation(`/${key}`);
+      return;
+    }
+    // Las secciones viven en la página de inicio: si estamos en otra página, volver y desplazar
+    if (window.location.pathname !== "/") {
+      setLocation("/");
+      setTimeout(() => scrollTo(id), 100);
+      return;
+    }
+    const el = document.getElementById(key);
     if (el) el.scrollIntoView({ behavior: "smooth" });
     else if (id === "Inicio") window.scrollTo({ top: 0, behavior: "smooth" });
   };

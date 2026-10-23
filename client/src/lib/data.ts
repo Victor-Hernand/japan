@@ -11,10 +11,10 @@ export const IMAGES = {
   aboutUs: "/images/nosotros-atencion.jpg",
   aboutPacking: "/images/nosotros-empaque-555.png",
   suspension: "/images/suspension.jpg",
-  catSuspension: "/images/cat-suspension-kyb.jpg",
-  catDireccion: "/images/cat-direccion-555.jpg",
-  catMotor: "/images/cat-motor-motormap.jpg",
-  catTransmision: "/images/cat-transmision-toyo.jpg",
+  catSuspension: "/images/cat-suspension-kyb-excel-g.jpg",
+  catDireccion: "/images/cat-direccion-555-barra.jpg",
+  catMotor: "/images/cat-motor-cada-empaques.jpg",
+  catTransmision: "/images/cat-transmision-toyo-cruceta.jpg",
   rotula555Tacoma: "/images/rotula-555-tacoma.jpeg",
   terminal555: "/images/terminal-555.jpeg",
   rotula555Hilux: "/images/rotula-555-hilux.jpeg",
@@ -167,7 +167,7 @@ export const PRODUCT_LINES = [
   {
     title: "Bujes",
     desc: "Solución confiable que mejora la estabilidad del vehículo, reduce vibraciones y asegura un funcionamiento eficiente y duradero de la suspensión.",
-    images: [{ src: "/images/producto-bujes-nisto.jpg", alt: "Bujes de tijera Nisto" }],
+    images: [{ src: "/images/producto-bujes-trc.jpg", alt: "Bujes TRC" }],
   },
   {
     title: "Brazos de suspensión",
@@ -177,12 +177,15 @@ export const PRODUCT_LINES = [
   {
     title: "Amortiguadores",
     desc: "Diseñados para ofrecer control absoluto, máxima estabilidad y una conducción segura y confortable en todo tipo de camino.",
-    images: [{ src: "/images/producto-amortiguador-kyb.jpg", alt: "Amortiguador KYB" }],
+    images: [
+      { src: "/images/producto-amortiguador-kyb-excel-g.jpg", alt: "Amortiguador KYB Excel-G" },
+      { src: "/images/producto-amortiguador-kyb-premium.jpg", alt: "Amortiguador KYB Premium" },
+    ],
   },
   {
     title: "Bomba de agua",
     desc: "Componente esencial del sistema de enfriamiento que circula el refrigerante para mantener el motor a la temperatura ideal, evitando el sobrecalentamiento y asegurando un funcionamiento eficiente.",
-    images: [{ src: "/images/producto-bomba-agua-npw.jpg", alt: "Bomba de agua NPW" }],
+    images: [{ src: "/images/producto-bomba-agua-npw-2.jpg", alt: "Bomba de agua NPW" }],
   },
   {
     title: "Cremallera",
@@ -205,7 +208,7 @@ export const PRODUCT_LINES = [
   {
     title: "Disco de freno",
     desc: "Frenado más suave y uniforme, con menos ruidos, vibraciones y rechinidos. Diseñado para altas temperaturas y con desgaste uniforme desde el inicio.",
-    images: [{ src: "/images/producto-disco-freno.jpg", alt: "Disco de freno Fremax" }],
+    images: [{ src: "/images/producto-disco-freno-hasaki.jpg", alt: "Disco de freno Hasaki" }],
   },
 ];
 
