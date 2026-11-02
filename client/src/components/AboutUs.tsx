@@ -16,48 +16,48 @@ export default function AboutUs() {
         <div className="flex flex-col items-center gap-16">
           <div className="w-full grid lg:grid-cols-2 gap-10 items-center">
           <div className="reveal-right w-full">
-            <h3 className="text-2xl font-black text-gray-900 mb-4 text-center">¿Quiénes somos?</h3>
+            <h3 className="text-2xl font-black text-gray-900 mb-4">¿Quiénes somos?</h3>
             <div className="space-y-4 mb-10">
               {ABOUT_PARAGRAPHS.map((paragraph) => (
-                <p key={paragraph} className="text-gray-600 leading-relaxed text-justify">
+                <p key={paragraph} className="text-gray-600 leading-relaxed">
                   {paragraph}
                 </p>
               ))}
             </div>
 
-            <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                <History className="w-5 h-5 text-red-600" />
+                <History className="w-5 h-5 text-[#ee2b2d]" />
               </div>
               <h3 className="text-2xl font-black text-gray-900">Nuestra Historia</h3>
             </div>
             <div className="space-y-4 mb-10">
               {HISTORY_PARAGRAPHS.map((paragraph) => (
-                <p key={paragraph} className="text-gray-600 leading-relaxed text-justify">
+                <p key={paragraph} className="text-gray-600 leading-relaxed">
                   {paragraph}
                 </p>
               ))}
             </div>
           </div>
-          <div className="reveal-left relative w-full max-w-md justify-self-center rounded-xl overflow-hidden">
+          <div className="reveal-left relative w-full max-w-2xl justify-self-center rounded-xl overflow-hidden">
             <img
               src={IMAGES.aboutUs}
               alt="Asesor de Japan HN atendiendo a un cliente por teléfono"
-              className="w-full h-[350px] lg:h-[450px] object-cover"
+              className="w-full h-auto"
             />
           </div>
           </div>
-          <div className="mt-16 grid md:grid-cols-2 gap-6 reveal">
-            <div className="bg-[#111827] border border-white/10 rounded-2xl p-8 hover:border-red-600/40 transition-colors">
+          <div className="grid md:grid-cols-2 gap-6 reveal">
+            <div className="bg-[#000002] border border-white/10 rounded-2xl p-8 hover:border-[#ee2b2d]/40 transition-colors">
               <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-4">
-                <Target className="w-6 h-6 text-red-600" />
+                <Target className="w-6 h-6 text-[#ee2b2d]" />
               </div>
               <h3 className="text-xl font-black text-white mb-3">Misión</h3>
               <p className="text-gray-300 leading-relaxed">{MISSION}</p>
             </div>
-            <div className="bg-[#111827] border border-white/10 rounded-2xl p-8 hover:border-red-600/40 transition-colors">
+            <div className="bg-[#000002] border border-white/10 rounded-2xl p-8 hover:border-[#ee2b2d]/40 transition-colors">
               <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-4">
-                <Compass className="w-6 h-6 text-red-600" />
+                <Compass className="w-6 h-6 text-[#ee2b2d]" />
               </div>
               <h3 className="text-xl font-black text-white mb-3">Visión</h3>
               <p className="text-gray-300 leading-relaxed">{VISION}</p>
@@ -68,8 +68,8 @@ export default function AboutUs() {
           <div className="mt-10 w-full flex flex-col items-center">
             <h3 className="text-2xl font-black text-gray-900 mb-6 text-center">Nuestros Valores</h3>
             <div className="relative mx-auto w-80 h-80 sm:w-[28rem] sm:h-[28rem]">
-              <div className="absolute inset-0 rounded-full bg-red-600/10 animate-pulse-soft" />
-              <div className="absolute inset-[18%] rounded-full bg-red-600/15" />
+              <div className="absolute inset-0 rounded-full bg-gray-100 animate-pulse-soft" />
+              <div className="absolute inset-[18%] rounded-full bg-gray-200" />
               <img
                 src={IMAGES.aboutPacking}
                 alt="Colaborador de Japan HN empacando repuestos 555 Made in Japan"
@@ -91,7 +91,7 @@ export default function AboutUs() {
                     aria-pressed={active}
                     onClick={() => setActiveValue(active ? null : i)}
                     className={`absolute -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full flex items-center justify-center border shadow-md transition-all duration-300 hover:scale-110 ${
-                      active ? "bg-red-600 border-red-600 text-white" : "bg-white border-red-200 text-red-600 hover:border-red-400"
+                      active ? "bg-[#ee2b2d] border-[#ee2b2d] text-white" : "bg-white border-red-200 text-[#ee2b2d] hover:border-red-400"
                     }`}
                     style={{
                       left: `${50 + radius * Math.cos(angle)}%`,
@@ -116,8 +116,8 @@ export default function AboutUs() {
             </div>
 
             <div className="mt-2 flex justify-center">
-              <span className="bg-white border border-gray-200 shadow-lg rounded-full px-4 py-2 text-xs font-bold text-gray-900">
-                <span className="text-red-600">●</span> Pedidos preparados con cuidado
+              <span className="bg-white border border-gray-200 shadow-sm rounded-full px-4 py-2 text-xs font-bold text-gray-900">
+                <span className="text-[#ee2b2d]">●</span> Pedidos preparados con cuidado
               </span>
             </div>
           </div>

@@ -8,7 +8,7 @@ export const IMAGES = {
   heroBg: "/images/hero-bg-japanhn.jpg",
   ctaBg: "/images/cta-bg.jpg",
   warehouse: "/images/warehouse.jpg",
-  aboutUs: "/images/nosotros-atencion.jpg",
+  aboutUs: "/images/nosotros-equipo-japanhn.jpg",
   aboutPacking: "/images/nosotros-empaque-555.png",
   suspension: "/images/suspension.jpg",
   catSuspension: "/images/cat-suspension-kyb-excel-g.jpg",

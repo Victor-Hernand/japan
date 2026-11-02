@@ -3,6 +3,7 @@ import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, BriefcaseBusiness, Linkedin, ExternalLink } from "lucide-react";
 import { PHONE_DISPLAY, PHONE_TEL, EMAIL, ADDRESS, SCHEDULE } from "@/lib/data";
 import { whatsappUrl, WhatsAppIcon } from "./WhatsAppLink";
+import { PrivacyPolicyDialog } from "./PrivacyPolicy";
 
 const MAP_SRC = `https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS)}&z=15&output=embed`;
 
@@ -15,9 +16,12 @@ const INFO = [
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [policyOpen, setPolicyOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!privacyAccepted) return;
     const text = `Hola, soy ${form.name}.\n\nEmail: ${form.email}\nTeléfono: ${form.phone}\n\n${form.message}`;
     window.open(whatsappUrl(text), "_blank");
   };
@@ -60,7 +64,7 @@ export default function Contact() {
               href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center justify-center gap-2 bg-green-500 text-white rounded-xl px-6 py-5 text-center shadow-lg shadow-green-500/25 hover:bg-green-600 hover:-translate-y-0.5 transition-all"
+              className="flex flex-col items-center justify-center gap-2 bg-green-500 text-white rounded-xl px-6 py-5 text-center shadow-md shadow-green-500/20 hover:bg-green-600 hover:-translate-y-0.5 transition-all"
             >
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white/15">
                 <WhatsAppIcon className="w-5 h-5" />
@@ -87,7 +91,7 @@ export default function Contact() {
         </div>
 
         {/* Trabajar con nosotros */}
-        <div className="mt-10 rounded-xl bg-[#111827] p-5 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+        <div className="mt-10 rounded-xl bg-[#000002] p-5 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
           <div className="flex items-center gap-2 text-white text-sm font-bold">
             <BriefcaseBusiness className="w-4 h-4 text-[#d4a02a]" />
             ¿Deseas trabajar con nosotros?
@@ -97,7 +101,7 @@ export default function Contact() {
               href="https://recruit.capgrupo.com/aplicar"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-xs font-bold text-[#111827] transition-colors hover:bg-gray-100"
+              className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-xs font-bold text-[#000002] transition-colors hover:bg-gray-100"
             >
               Aplicar ahora
               <ExternalLink className="w-3.5 h-3.5" />
@@ -122,7 +126,7 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="space-y-3">
             <div className="grid sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Nombre</label>
+                <label className="block text-xs font-bold text-gray-600 mb-1">Nombre</label>
                 <input
                   type="text"
                   placeholder="Tu nombre"
@@ -133,7 +137,7 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Email</label>
+                <label className="block text-xs font-bold text-gray-600 mb-1">Email</label>
                 <input
                   type="email"
                   placeholder="tu@email.com"
@@ -145,7 +149,7 @@ export default function Contact() {
               </div>
             </div>
             <div>
-              <label className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Teléfono</label>
+              <label className="block text-xs font-bold text-gray-600 mb-1">Teléfono</label>
               <input
                 type="tel"
                 placeholder="+504 0000-0000"
@@ -155,7 +159,7 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Mensaje</label>
+              <label className="block text-xs font-bold text-gray-600 mb-1">Mensaje</label>
               <textarea
                 placeholder="Indica el repuesto, marca, modelo del vehículo y cantidad requerida."
                 rows={3}
@@ -165,12 +169,39 @@ export default function Contact() {
                 required
               />
             </div>
+            <div className="flex items-start gap-2 text-xs text-gray-600 leading-relaxed">
+              <input
+                id="privacy-accept"
+                type="checkbox"
+                checked={privacyAccepted}
+                onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-gray-300 text-[#d4a02a] focus:ring-[#d4a02a]/40"
+                required
+              />
+              <label htmlFor="privacy-accept" className="cursor-pointer">
+                He leído y acepto la{" "}
+                <button
+                  type="button"
+                  onClick={() => setPolicyOpen(true)}
+                  className="font-semibold text-[#b8861f] underline underline-offset-2 hover:text-[#d4a02a]"
+                >
+                  Política de privacidad y uso de datos
+                </button>
+                , y autorizo el tratamiento de mis datos para atender esta solicitud.
+              </label>
+            </div>
+            <PrivacyPolicyDialog
+              open={policyOpen}
+              onOpenChange={setPolicyOpen}
+              onAccept={() => setPrivacyAccepted(true)}
+            />
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-red-600 text-white py-2.5 rounded-md font-bold text-xs hover:bg-red-700 transition-all"
+              disabled={!privacyAccepted}
+              className="w-full flex items-center justify-center gap-2 bg-[#ee2b2d] text-white py-2.5 rounded-md font-bold text-xs hover:bg-[#c92224] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#ee2b2d]"
             >
               <Send className="w-3.5 h-3.5" />
-              ENVIAR COTIZACIÓN POR WHATSAPP
+              Enviar cotización por WhatsApp
             </button>
           </form>
         </div>

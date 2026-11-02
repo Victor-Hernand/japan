@@ -14,7 +14,7 @@ export default function Catalog() {
         {/* Header */}
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Catálogo de <span className="text-red-600 italic">autopartes japonesas</span>
+            Catálogo de <span className="text-[#ee2b2d]">autopartes japonesas</span>
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             Portafolio completo de repuestos japoneses organizados por categoría, ideales para distribuidores que buscan calidad y durabilidad.
@@ -29,7 +29,7 @@ export default function Catalog() {
               onClick={() => setActiveTab(i)}
               className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all ${
                 i === activeTab
-                  ? "bg-red-600 text-white shadow-lg shadow-red-600/20"
+                  ? "bg-[#ee2b2d] text-white shadow-sm"
                   : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
               }`}
             >
@@ -40,30 +40,31 @@ export default function Catalog() {
 
         {/* Content */}
         <div className="grid lg:grid-cols-2 gap-8 items-center reveal">
-          <div className="relative rounded-xl overflow-hidden bg-white border border-gray-200 shadow-sm group">
+          {/* Padding para que la pieza respire y no toque los bordes de la tarjeta */}
+          <div className="relative rounded-xl overflow-hidden bg-white border border-gray-200 shadow-sm group p-10 flex items-center justify-center aspect-[4/3]">
             <img
               key={tab.id}
               src={tab.image}
               alt={`Autopartes japonesas de ${tab.title} — Japan HN`}
               loading="lazy"
-              className="w-full aspect-square max-h-[320px] mx-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+              className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]"
             />
           </div>
 
           <div>
             <h3 className="text-2xl font-black text-gray-900 mb-2">{tab.title}</h3>
-            <div className="w-12 h-1 bg-red-600 rounded mb-4" />
+            <div className="w-12 h-1 bg-[#ee2b2d] rounded mb-4" />
             <p className="text-gray-500 mb-6 leading-relaxed">{tab.desc}</p>
             <ul className="space-y-3 mb-8">
               {tab.items.map((item) => (
                 <li key={item} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-[#ee2b2d] flex-shrink-0" />
                   <span className="text-gray-700">{item}</span>
                 </li>
               ))}
             </ul>
             <WhatsAppLink message={`Hola, me interesa cotizar productos de ${tab.title}`}>
-              COTIZAR {tab.title.toUpperCase()}
+              Cotizar {tab.title.toLowerCase()}
             </WhatsAppLink>
           </div>
         </div>

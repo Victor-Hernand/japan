@@ -5,7 +5,7 @@ import { whatsappUrl, WhatsAppIcon } from "./WhatsAppLink";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10">
+    <footer className="bg-[#000002] text-gray-300 py-10">
       <div className="container flex flex-col items-center gap-6">
         <img
           src={IMAGES.logoJapanHn}

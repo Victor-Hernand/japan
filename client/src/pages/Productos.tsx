@@ -27,7 +27,7 @@ export default function Productos({ params }: { params: { grupo: string } }) {
     <div className="min-h-screen bg-background text-foreground">
       <TopBar />
       <Navbar />
-      <div className="bg-[#111827] pt-28 pb-10">
+      <div className="bg-[#000002] pt-28 pb-10">
         <div className="container">
           <ProductTabs />
         </div>
