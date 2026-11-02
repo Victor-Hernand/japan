@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { GALLERY_IMAGES } from "@/lib/data";
 import Lightbox from "./Lightbox";
+import CursorParallax from "./CursorParallax";
 
 export default function Gallery() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -22,8 +23,9 @@ export default function Gallery() {
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {GALLERY_IMAGES.map((img, i) => (
-            <button
-              key={i}
+            <CursorParallax
+              key={img.src}
+              as="button"
               type="button"
               onClick={() => setOpenIndex(i)}
               className="reveal relative rounded-lg overflow-hidden group cursor-pointer aspect-[3/4] bg-white border border-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ee2b2d] focus-visible:ring-offset-2"
@@ -33,7 +35,7 @@ export default function Gallery() {
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-contain p-2"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
@@ -41,7 +43,7 @@ export default function Gallery() {
                   Ver detalle
                 </span>
               </div>
-            </button>
+            </CursorParallax>
           ))}
         </div>
 

@@ -1,9 +1,16 @@
 /* FeaturedProducts — Light theme: white bg, cards with border, red badges */
-import { MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { ZoomIn } from "lucide-react";
 import { FEATURED_PRODUCTS } from "@/lib/data";
 import WhatsAppLink from "./WhatsAppLink";
+import CursorParallax from "./CursorParallax";
+import Lightbox from "./Lightbox";
+
+const FEATURED_IMAGES = FEATURED_PRODUCTS.map((p) => ({ src: p.image, alt: p.title }));
 
 export default function FeaturedProducts() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section className="pt-12 pb-20 bg-white">
       <div className="container">
@@ -25,14 +32,23 @@ export default function FeaturedProducts() {
               className="reveal group flex flex-col bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md hover:border-red-200 transition-all duration-300"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              {/* Image */}
-              <div className="relative h-64 overflow-hidden bg-gray-50">
+              {/* Image: clic para ampliar */}
+              <CursorParallax
+                as="button"
+                type="button"
+                onClick={() => setOpenIndex(i)}
+                aria-label={`Ampliar imagen: ${product.title}`}
+                className="group relative h-64 overflow-hidden bg-gray-50 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#ee2b2d]"
+              >
                 {/* object-contain: la pieza completa, sin recortar sus extremos */}
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain p-4"
                 />
+                <span className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center pointer-events-none">
+                  <ZoomIn className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow" />
+                </span>
                 {/* Badge */}
                 <span className="absolute top-4 left-4 bg-[#ee2b2d] text-white text-xs font-bold px-3 py-1 rounded">
                   {product.badge}
@@ -41,7 +57,7 @@ export default function FeaturedProducts() {
                 <span className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-bold px-2.5 py-1 rounded">
                   {product.brand}
                 </span>
-              </div>
+              </CursorParallax>
 
               {/* Content */}
               <div className="flex flex-col flex-1 p-5">
@@ -57,6 +73,8 @@ export default function FeaturedProducts() {
             </div>
           ))}
         </div>
+
+        <Lightbox images={FEATURED_IMAGES} index={openIndex} onIndexChange={setOpenIndex} />
       </div>
     </section>
   );

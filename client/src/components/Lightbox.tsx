@@ -14,11 +14,26 @@ type Props = {
 
 export default function Lightbox({ images, index, onIndexChange }: Props) {
   const isOpen = index !== null;
-  const [zoom, setZoom] = useState(1);
+  // El zoom guarda el índice al que pertenece: al cambiar de imagen se lee como 1,
+  // sin un efecto que resetee el estado después del render.
+  const [zoomState, setZoomState] = useState({ index, zoom: 1 });
+  const zoom = zoomState.index === index ? zoomState.zoom : 1;
+  const setZoom = useCallback(
+    (update: number | ((current: number) => number)) => {
+      setZoomState((prev) => {
+        const current = prev.index === index ? prev.zoom : 1;
+        return { index, zoom: typeof update === "function" ? update(current) : update };
+      });
+    },
+    [index]
+  );
 
-  const changeZoom = useCallback((delta: number) => {
-    setZoom((current) => Math.min(3, Math.max(1, Number((current + delta).toFixed(1)))));
-  }, []);
+  const changeZoom = useCallback(
+    (delta: number) => {
+      setZoom((current) => Math.min(3, Math.max(1, Number((current + delta).toFixed(1)))));
+    },
+    [setZoom]
+  );
 
   const go = useCallback(
     (delta: number) => {
@@ -28,10 +43,6 @@ export default function Lightbox({ images, index, onIndexChange }: Props) {
     },
     [index, images.length, onIndexChange]
   );
-
-  useEffect(() => {
-    setZoom(1);
-  }, [index]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -44,7 +55,7 @@ export default function Lightbox({ images, index, onIndexChange }: Props) {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [isOpen, go, changeZoom]);
+  }, [isOpen, go, changeZoom, setZoom]);
 
   if (index === null) return null;
   const image = images[index];

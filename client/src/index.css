@@ -297,3 +297,22 @@ html {
     animation: none;
   }
 }
+
+/* Respuesta al cursor (CursorParallax): la imagen se desplaza poco en sentido contrario y crece suavemente al pasar */
+.cursor-parallax img {
+  --s: 1;
+  transform: translate3d(calc(var(--px, 0) * -8px), calc(var(--py, 0) * -8px), 0) scale(var(--s));
+  transition: transform 0.6s var(--ease-out);
+}
+.cursor-parallax:hover img {
+  --s: 1.04;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor-parallax img {
+    transform: none;
+    transition: none;
+  }
+  .cursor-parallax:hover img {
+    --s: 1;
+  }
+}

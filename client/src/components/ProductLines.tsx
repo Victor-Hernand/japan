@@ -4,6 +4,7 @@ import { Images, ZoomIn } from "lucide-react";
 import { IMAGES, PRODUCT_LINES } from "@/lib/data";
 import Lightbox from "./Lightbox";
 import WhatsAppLink from "./WhatsAppLink";
+import CursorParallax from "./CursorParallax";
 
 /** Todas las imágenes en una sola lista para navegar entre productos en el visor */
 const VISIBLE_PRODUCT_LINES = PRODUCT_LINES.filter(
@@ -40,7 +41,8 @@ export default function ProductLines() {
               >
                 {/* Image */}
                 {first ? (
-                  <button
+                  <CursorParallax
+                    as="button"
                     type="button"
                     onClick={() => setOpenIndex(startIndex)}
                     className="relative aspect-[4/3] p-5 overflow-hidden bg-white cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#ee2b2d]"
@@ -50,7 +52,7 @@ export default function ProductLines() {
                       src={first.src}
                       alt={first.alt}
                       loading="lazy"
-                      className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-contain"
                     />
                     <span className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                       <ZoomIn className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow" />
@@ -61,7 +63,7 @@ export default function ProductLines() {
                         {product.images.length}
                       </span>
                     )}
-                  </button>
+                  </CursorParallax>
                 ) : (
                   <div className="relative aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center gap-4">
                     <img src={IMAGES.logoJapanHn} alt="" className="w-32 opacity-80" width={533} height={246} />

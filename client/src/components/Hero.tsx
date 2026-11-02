@@ -23,8 +23,8 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6">
-            <span className="text-gray-900">tecnología japonesa</span>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 uppercase">
+            <span className="text-gray-900">Tecnología japonesa</span>
             <br />
             <span className="text-[#ee2b2d]">que impulsa tu rentabilidad</span>
           </h1>
