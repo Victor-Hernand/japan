@@ -18,15 +18,15 @@ export default function Hero() {
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-6">
             <span className="w-2 h-2 bg-[#ee2b2d] rounded-full animate-pulse" />
-            <span className="text-xs font-bold tracking-[0.2em] text-[#ee2b2d] uppercase">
+            <span className="text-sm font-bold text-[#ee2b2d]">
               Distribuidores B2B especializados en repuestos japoneses
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 uppercase">
-            <span className="text-gray-900">Tecnología japonesa</span>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6">
+            <span className="text-gray-900">tecnología japonesa</span>
             <br />
-            <span className="text-[#ee2b2d] italic">que impulsa tu rentabilidad</span>
+            <span className="text-[#ee2b2d]">que impulsa tu rentabilidad</span>
           </h1>
 
           <p className="text-gray-900 text-xl font-bold mb-4">

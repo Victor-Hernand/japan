@@ -8,7 +8,7 @@ export default function Brands() {
         {/* Header */}
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Marcas <span className="text-[#ee2b2d] italic">japonesas</span> líderes en autopartes
+            Marcas <span className="text-[#ee2b2d]">japonesas</span> líderes en autopartes
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             Alianzas estratégicas con fabricantes japoneses reconocidos por su calidad, durabilidad y desempeño en uso profesional.

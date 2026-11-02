@@ -20,7 +20,7 @@ export default function ProductLines() {
         {/* Header */}
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Nuestros <span className="text-[#ee2b2d] italic">productos</span>
+            Nuestros <span className="text-[#ee2b2d]">productos</span>
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             Componentes de alto desempeño que combinan precisión, innovación y durabilidad para tu negocio.
@@ -35,7 +35,7 @@ export default function ProductLines() {
             return (
               <div
                 key={product.title}
-                className="reveal flex flex-col bg-gray-50 border border-gray-200 rounded-xl overflow-hidden hover:border-red-200 hover:shadow-xl transition-all duration-300 group"
+                className="reveal flex flex-col bg-gray-50 border border-gray-200 rounded-xl overflow-hidden hover:border-red-200 hover:shadow-md transition-all duration-300 group"
                 style={{ transitionDelay: `${(i % 3) * 80}ms` }}
               >
                 {/* Image */}

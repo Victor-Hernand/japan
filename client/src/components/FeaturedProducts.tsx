@@ -10,7 +10,7 @@ export default function FeaturedProducts() {
         {/* Header */}
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Productos <span className="text-[#ee2b2d] italic">estrella</span> para uso profesional
+            Productos <span className="text-[#ee2b2d]">estrella</span> para uso profesional
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             Los repuestos más demandados por distribuidores, respaldados por marcas japonesas de clase mundial.
@@ -22,18 +22,19 @@ export default function FeaturedProducts() {
           {FEATURED_PRODUCTS.map((product, i) => (
             <div
               key={product.title}
-              className="reveal group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-red-200 transition-all duration-300"
+              className="reveal group flex flex-col bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md hover:border-red-200 transition-all duration-300"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden bg-gray-50">
+                {/* object-contain: la pieza completa, sin recortar sus extremos */}
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Badge */}
-                <span className="absolute top-4 left-4 bg-[#ee2b2d] text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded">
+                <span className="absolute top-4 left-4 bg-[#ee2b2d] text-white text-xs font-bold px-3 py-1 rounded">
                   {product.badge}
                 </span>
                 {/* Brand */}
@@ -43,11 +44,11 @@ export default function FeaturedProducts() {
               </div>
 
               {/* Content */}
-              <div className="p-5">
+              <div className="flex flex-col flex-1 p-5">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{product.title}</h3>
                 <p className="text-gray-500 text-sm mb-4">{product.desc}</p>
                 <WhatsAppLink
-                  className="justify-center w-full py-2.5 px-0 shadow-none"
+                  className="mt-auto justify-center w-full py-2.5 px-0 shadow-none"
                   message={`Hola, me interesa cotizar: ${product.title}`}
                 >
                   Cotizar este producto

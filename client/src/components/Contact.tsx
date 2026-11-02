@@ -64,7 +64,7 @@ export default function Contact() {
               href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center justify-center gap-2 bg-green-500 text-white rounded-xl px-6 py-5 text-center shadow-lg shadow-green-500/25 hover:bg-green-600 hover:-translate-y-0.5 transition-all"
+              className="flex flex-col items-center justify-center gap-2 bg-green-500 text-white rounded-xl px-6 py-5 text-center shadow-md shadow-green-500/20 hover:bg-green-600 hover:-translate-y-0.5 transition-all"
             >
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white/15">
                 <WhatsAppIcon className="w-5 h-5" />
@@ -126,7 +126,7 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="space-y-3">
             <div className="grid sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Nombre</label>
+                <label className="block text-xs font-bold text-gray-600 mb-1">Nombre</label>
                 <input
                   type="text"
                   placeholder="Tu nombre"
@@ -137,7 +137,7 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Email</label>
+                <label className="block text-xs font-bold text-gray-600 mb-1">Email</label>
                 <input
                   type="email"
                   placeholder="tu@email.com"
@@ -149,7 +149,7 @@ export default function Contact() {
               </div>
             </div>
             <div>
-              <label className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Teléfono</label>
+              <label className="block text-xs font-bold text-gray-600 mb-1">Teléfono</label>
               <input
                 type="tel"
                 placeholder="+504 0000-0000"
@@ -159,7 +159,7 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">Mensaje</label>
+              <label className="block text-xs font-bold text-gray-600 mb-1">Mensaje</label>
               <textarea
                 placeholder="Indica el repuesto, marca, modelo del vehículo y cantidad requerida."
                 rows={3}
@@ -201,7 +201,7 @@ export default function Contact() {
               className="w-full flex items-center justify-center gap-2 bg-[#ee2b2d] text-white py-2.5 rounded-md font-bold text-xs hover:bg-[#c92224] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#ee2b2d]"
             >
               <Send className="w-3.5 h-3.5" />
-              ENVIAR COTIZACIÓN POR WHATSAPP
+              Enviar cotización por WhatsApp
             </button>
           </form>
         </div>

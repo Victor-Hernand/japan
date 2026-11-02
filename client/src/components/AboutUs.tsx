@@ -16,16 +16,16 @@ export default function AboutUs() {
         <div className="flex flex-col items-center gap-16">
           <div className="w-full grid lg:grid-cols-2 gap-10 items-center">
           <div className="reveal-right w-full">
-            <h3 className="text-2xl font-black text-gray-900 mb-4 text-center">¿Quiénes somos?</h3>
+            <h3 className="text-2xl font-black text-gray-900 mb-4">¿Quiénes somos?</h3>
             <div className="space-y-4 mb-10">
               {ABOUT_PARAGRAPHS.map((paragraph) => (
-                <p key={paragraph} className="text-gray-600 leading-relaxed text-justify">
+                <p key={paragraph} className="text-gray-600 leading-relaxed">
                   {paragraph}
                 </p>
               ))}
             </div>
 
-            <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
                 <History className="w-5 h-5 text-[#ee2b2d]" />
               </div>
@@ -33,7 +33,7 @@ export default function AboutUs() {
             </div>
             <div className="space-y-4 mb-10">
               {HISTORY_PARAGRAPHS.map((paragraph) => (
-                <p key={paragraph} className="text-gray-600 leading-relaxed text-justify">
+                <p key={paragraph} className="text-gray-600 leading-relaxed">
                   {paragraph}
                 </p>
               ))}
@@ -47,7 +47,7 @@ export default function AboutUs() {
             />
           </div>
           </div>
-          <div className="mt-16 grid md:grid-cols-2 gap-6 reveal">
+          <div className="grid md:grid-cols-2 gap-6 reveal">
             <div className="bg-[#000002] border border-white/10 rounded-2xl p-8 hover:border-[#ee2b2d]/40 transition-colors">
               <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-4">
                 <Target className="w-6 h-6 text-[#ee2b2d]" />
@@ -68,8 +68,8 @@ export default function AboutUs() {
           <div className="mt-10 w-full flex flex-col items-center">
             <h3 className="text-2xl font-black text-gray-900 mb-6 text-center">Nuestros Valores</h3>
             <div className="relative mx-auto w-80 h-80 sm:w-[28rem] sm:h-[28rem]">
-              <div className="absolute inset-0 rounded-full bg-[#ee2b2d]/25 animate-pulse-soft" />
-              <div className="absolute inset-[18%] rounded-full bg-[#ee2b2d]/40" />
+              <div className="absolute inset-0 rounded-full bg-gray-100 animate-pulse-soft" />
+              <div className="absolute inset-[18%] rounded-full bg-gray-200" />
               <img
                 src={IMAGES.aboutPacking}
                 alt="Colaborador de Japan HN empacando repuestos 555 Made in Japan"
@@ -116,7 +116,7 @@ export default function AboutUs() {
             </div>
 
             <div className="mt-2 flex justify-center">
-              <span className="bg-white border border-gray-200 shadow-lg rounded-full px-4 py-2 text-xs font-bold text-gray-900">
+              <span className="bg-white border border-gray-200 shadow-sm rounded-full px-4 py-2 text-xs font-bold text-gray-900">
                 <span className="text-[#ee2b2d]">●</span> Pedidos preparados con cuidado
               </span>
             </div>

@@ -11,11 +11,11 @@ export default function Distribution() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 items-start">
           {/* Left */}
           <div className="md:col-span-1 lg:col-span-1 reveal-left">
-            <span className="inline-block px-4 py-1.5 bg-red-50 text-[#ee2b2d] text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-4 border border-red-100">
-              Cobertura Nacional
+            <span className="inline-block px-4 py-1.5 bg-red-50 text-[#ee2b2d] text-sm font-bold rounded-full mb-4 border border-red-100">
+              Cobertura nacional
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4">
-              Distribución nacional de repuestos en <span className="text-[#ee2b2d] italic">Honduras</span>
+              Distribución nacional de repuestos en <span className="text-[#ee2b2d]">Honduras</span>
             </h2>
             <p className="text-gray-300 text-sm md:text-base mb-8 leading-relaxed">
               Nuestra red de distribución cubre las principales ciudades de Honduras, garantizando entregas rápidas, seguras y confiables para talleres, flotas y distribuidores.
@@ -91,7 +91,7 @@ export default function Distribution() {
         <div className="mt-16 reveal">
           <div className="text-center mb-8">
             <h3 className="text-2xl sm:text-3xl font-black text-white">
-              Inventario y equipo <span className="text-[#ee2b2d] italic">listos para ti</span>
+              Inventario y equipo <span className="text-[#ee2b2d]">listos para ti</span>
             </h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:[grid-template-rows:repeat(2,minmax(0,1fr))]">

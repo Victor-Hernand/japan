@@ -12,7 +12,7 @@ export default function Testimonial() {
           </div>
           <div className="text-center mb-8">
             <h3 className="text-2xl sm:text-3xl font-black text-gray-900">
-              Nuestros <span className="text-[#ee2b2d] italic">clientes</span>
+              Nuestros <span className="text-[#ee2b2d]">clientes</span>
             </h3>
             <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
               Nos enorgullece recibir comentarios de nuestros clientes como el de Carlos Sagastume, de Inversiones A y M, quienes destacan no solo la calidad de nuestros productos, sino también la atención personalizada, eficiencia y precios competitivos que ofrecemos en cada compra.

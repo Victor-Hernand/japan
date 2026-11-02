@@ -15,7 +15,7 @@ export default function CTA() {
       <div className="container relative z-10 text-center">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">
           ¿Listo para crecer con<br />
-          <span className="text-[#ee2b2d] italic">repuestos japoneses confiables</span>?
+          <span className="text-[#ee2b2d]">repuestos japoneses confiables</span>?
         </h2>
         <p className="text-gray-700 font-bold max-w-lg mx-auto mb-4">
           Únete a los distribuidores que ya confían en Japan HN como su socio estratégico para repuestos japoneses confiables y rentables.
