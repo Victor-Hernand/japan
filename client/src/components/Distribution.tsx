@@ -6,16 +6,16 @@ import HondurasMap from "./HondurasMap";
 
 export default function Distribution() {
   return (
-    <section className="pt-8 pb-20 bg-[#111827]">
+    <section className="pt-8 pb-20 bg-[#000002]">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 items-start">
           {/* Left */}
           <div className="md:col-span-1 lg:col-span-1 reveal-left">
-            <span className="inline-block px-4 py-1.5 bg-red-50 text-red-600 text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-4 border border-red-100">
+            <span className="inline-block px-4 py-1.5 bg-red-50 text-[#ee2b2d] text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-4 border border-red-100">
               Cobertura Nacional
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4">
-              Distribución nacional de repuestos en <span className="text-red-600 italic">Honduras</span>
+              Distribución nacional de repuestos en <span className="text-[#ee2b2d] italic">Honduras</span>
             </h2>
             <p className="text-gray-300 text-sm md:text-base mb-8 leading-relaxed">
               Nuestra red de distribución cubre las principales ciudades de Honduras, garantizando entregas rápidas, seguras y confiables para talleres, flotas y distribuidores.
@@ -25,10 +25,10 @@ export default function Distribution() {
               {CITIES.map((city) => (
                 <div
                   key={city.name}
-                  className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-[#1f2937] border border-white/10 rounded-xl hover:border-red-600/40 transition-all"
+                  className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-[#1f2937] border border-white/10 rounded-xl hover:border-[#ee2b2d]/40 transition-all"
                 >
                   <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-4 md:w-5 h-4 md:h-5 text-red-600" />
+                    <MapPin className="w-4 md:w-5 h-4 md:h-5 text-[#ee2b2d]" />
                   </div>
                   <div className="min-w-0">
                     <h4 className="font-bold text-white text-xs md:text-sm truncate">{city.name}</h4>
@@ -54,7 +54,7 @@ export default function Distribution() {
         <div className="mt-8 max-w-sm mx-auto reveal">
           <div className="bg-white border border-gray-200 rounded-xl p-5 text-center">
             <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Truck className="w-5 h-5 text-red-600" />
+              <Truck className="w-5 h-5 text-[#ee2b2d]" />
             </div>
             <h3 className="text-lg font-black text-gray-900 mb-1">Tiempos de Entrega</h3>
             <p className="text-gray-600 text-xs mb-4">
@@ -62,17 +62,17 @@ export default function Distribution() {
             </p>
 
             <div className="grid grid-cols-2 gap-3 mb-4">
-              <div className="bg-[#111827] border border-white/10 rounded-lg p-3">
+              <div className="bg-[#000002] border border-white/10 rounded-lg p-3">
                 <div className="flex items-center justify-center gap-1 md:gap-2 mb-2 md:mb-3">
-                  <Clock className="w-3.5 h-3.5 text-red-600" />
-                  <span className="text-xl font-black text-red-600">24h</span>
+                  <Clock className="w-3.5 h-3.5 text-[#ee2b2d]" />
+                  <span className="text-xl font-black text-[#ee2b2d]">24h</span>
                 </div>
                 <span className="text-xs font-medium text-gray-300">Tegucigalpa</span>
               </div>
-              <div className="bg-[#111827] border border-white/10 rounded-lg p-3">
+              <div className="bg-[#000002] border border-white/10 rounded-lg p-3">
                 <div className="flex items-center justify-center gap-1 md:gap-2 mb-2 md:mb-3">
-                  <Clock className="w-3.5 h-3.5 text-red-600" />
-                  <span className="text-xl font-black text-red-600">48h</span>
+                  <Clock className="w-3.5 h-3.5 text-[#ee2b2d]" />
+                  <span className="text-xl font-black text-[#ee2b2d]">48h</span>
                 </div>
                 <span className="text-xs font-medium text-gray-300">Resto del país</span>
               </div>
@@ -91,7 +91,7 @@ export default function Distribution() {
         <div className="mt-16 reveal">
           <div className="text-center mb-8">
             <h3 className="text-2xl sm:text-3xl font-black text-white">
-              Inventario y equipo <span className="text-red-600 italic">listos para ti</span>
+              Inventario y equipo <span className="text-[#ee2b2d] italic">listos para ti</span>
             </h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:[grid-template-rows:repeat(2,minmax(0,1fr))]">
@@ -117,17 +117,17 @@ export default function Distribution() {
         {/* Trust signals */}
         <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-300 reveal">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-red-600" />
+            <ShieldCheck className="w-4 h-4 text-[#ee2b2d]" />
             <span>Envíos seguros</span>
           </div>
           <span className="text-gray-300">·</span>
           <div className="flex items-center gap-2">
-            <Headphones className="w-4 h-4 text-red-600" />
+            <Headphones className="w-4 h-4 text-[#ee2b2d]" />
             <span>Atención personalizada</span>
           </div>
           <span className="text-gray-300">·</span>
           <div className="flex items-center gap-2">
-            <PackageCheck className="w-4 h-4 text-red-600" />
+            <PackageCheck className="w-4 h-4 text-[#ee2b2d]" />
             <span>Seguimiento de pedidos</span>
           </div>
         </div>

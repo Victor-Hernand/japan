@@ -12,7 +12,7 @@ export default function Gallery() {
         {/* Header */}
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Rótulas <span className="text-red-600 italic">y terminales</span>
+            Rótulas <span className="text-[#ee2b2d] italic">y terminales</span>
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             Fotografías reales de nuestro catálogo de repuestos japoneses de calidad superior.
@@ -26,7 +26,7 @@ export default function Gallery() {
               key={i}
               type="button"
               onClick={() => setOpenIndex(i)}
-              className="reveal relative rounded-lg overflow-hidden group cursor-pointer aspect-[3/4] border border-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2"
+              className="reveal relative rounded-lg overflow-hidden group cursor-pointer aspect-[3/4] border border-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ee2b2d] focus-visible:ring-offset-2"
               style={{ transitionDelay: `${(i % 4) * 50}ms` }}
               aria-label={`Ampliar: ${img.alt}`}
             >

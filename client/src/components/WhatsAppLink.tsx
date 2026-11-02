@@ -27,7 +27,7 @@ type Variant = "primary" | "secondary" | "icon";
 
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "inline-flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-red-700 transition-all shadow-lg shadow-red-600/20",
+    "inline-flex items-center gap-2 bg-[#ee2b2d] text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-[#c92224] transition-all shadow-lg shadow-[#ee2b2d]/20",
   secondary:
     "inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-green-600 underline underline-offset-4 decoration-gray-300 hover:decoration-green-500 transition-colors",
   icon: "inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors",

@@ -24,7 +24,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <Catalog />
-      <section className="py-16 bg-[#111827]">
+      <section className="py-16 bg-[#000002]">
         <div className="container">
           <ProductTabs />
         </div>

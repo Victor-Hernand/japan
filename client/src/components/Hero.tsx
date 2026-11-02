@@ -17,8 +17,8 @@ export default function Hero() {
       <div className="container relative z-10">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-6">
-            <span className="w-2 h-2 bg-red-600 rounded-full animate-pulse" />
-            <span className="text-xs font-bold tracking-[0.2em] text-red-600 uppercase">
+            <span className="w-2 h-2 bg-[#ee2b2d] rounded-full animate-pulse" />
+            <span className="text-xs font-bold tracking-[0.2em] text-[#ee2b2d] uppercase">
               Distribuidores B2B especializados en repuestos japoneses
             </span>
           </div>
@@ -26,7 +26,7 @@ export default function Hero() {
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 uppercase">
             <span className="text-gray-900">Tecnología japonesa</span>
             <br />
-            <span className="text-red-600 italic">que impulsa tu rentabilidad</span>
+            <span className="text-[#ee2b2d] italic">que impulsa tu rentabilidad</span>
           </h1>
 
           <p className="text-gray-900 text-xl font-bold mb-4">
@@ -41,14 +41,14 @@ export default function Hero() {
 
           <div className="flex flex-wrap gap-4">
             <WhatsAppLink
-              className="px-7 py-3.5 hover:shadow-red-600/30"
+              className="px-7 py-3.5 hover:shadow-[#ee2b2d]/30"
               message="Hola, quiero cotizar repuestos japoneses."
             >
               Cotiza por WhatsApp
             </WhatsAppLink>
             <button
               onClick={() => document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" })}
-              className="flex items-center gap-2 border-2 border-gray-300 text-gray-700 px-7 py-3.5 rounded-lg font-bold text-sm hover:border-red-600 hover:text-red-600 transition-all bg-white/80"
+              className="flex items-center gap-2 border-2 border-gray-300 text-gray-700 px-7 py-3.5 rounded-lg font-bold text-sm hover:border-[#ee2b2d] hover:text-[#ee2b2d] transition-all bg-white/80"
             >
               Ver catálogo de productos
               <ArrowRight className="w-4 h-4" />

@@ -10,7 +10,7 @@ export default function FeaturedProducts() {
         {/* Header */}
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Productos <span className="text-red-600 italic">estrella</span> para uso profesional
+            Productos <span className="text-[#ee2b2d] italic">estrella</span> para uso profesional
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             Los repuestos más demandados por distribuidores, respaldados por marcas japonesas de clase mundial.
@@ -33,7 +33,7 @@ export default function FeaturedProducts() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Badge */}
-                <span className="absolute top-4 left-4 bg-red-600 text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded">
+                <span className="absolute top-4 left-4 bg-[#ee2b2d] text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded">
                   {product.badge}
                 </span>
                 {/* Brand */}

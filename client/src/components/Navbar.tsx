@@ -62,10 +62,10 @@ export default function Navbar() {
             <button
               key={item}
               onClick={() => scrollTo(item === "Catálogo" ? "catalogo" : item.toLowerCase())}
-              className="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors relative group"
+              className="text-sm font-medium text-gray-700 hover:text-[#ee2b2d] transition-colors relative group"
             >
               {item}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-600 transition-all group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ee2b2d] transition-all group-hover:w-full" />
             </button>
           ))}
         </div>
@@ -93,7 +93,7 @@ export default function Navbar() {
               <button
                 key={item}
                 onClick={() => scrollTo(item === "Catálogo" ? "catalogo" : item.toLowerCase())}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-red-600 rounded-lg transition-colors font-medium"
+                className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#ee2b2d] rounded-lg transition-colors font-medium"
               >
                 {item}
               </button>

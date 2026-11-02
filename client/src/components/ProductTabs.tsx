@@ -21,8 +21,8 @@ export default function ProductTabs() {
             aria-current={active ? "page" : undefined}
             className={`px-6 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider border transition-all duration-300 hover:-translate-y-0.5 ${
               active
-                ? "bg-white text-red-600 border-white shadow-lg shadow-black/30"
-                : "bg-red-600 text-white border-red-600 shadow-sm hover:bg-red-700 hover:border-red-700 hover:shadow-md"
+                ? "bg-white text-[#ee2b2d] border-white shadow-lg shadow-black/30"
+                : "bg-[#ee2b2d] text-white border-[#ee2b2d] shadow-sm hover:bg-[#c92224] hover:border-[#c92224] hover:shadow-md"
             }`}
           >
             {tab.label}

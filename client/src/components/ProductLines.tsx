@@ -20,7 +20,7 @@ export default function ProductLines() {
         {/* Header */}
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900">
-            Nuestros <span className="text-red-600 italic">productos</span>
+            Nuestros <span className="text-[#ee2b2d] italic">productos</span>
           </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
             Componentes de alto desempeño que combinan precisión, innovación y durabilidad para tu negocio.
@@ -43,7 +43,7 @@ export default function ProductLines() {
                   <button
                     type="button"
                     onClick={() => setOpenIndex(startIndex)}
-                    className="relative aspect-[4/3] p-5 overflow-hidden bg-white cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-red-600"
+                    className="relative aspect-[4/3] p-5 overflow-hidden bg-white cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#ee2b2d]"
                     aria-label={`Ampliar imagen: ${product.title}`}
                   >
                     <img

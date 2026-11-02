@@ -6,15 +6,15 @@ type Variant = "topbar" | "navbar" | "footer";
 
 const STYLES: Record<Variant, { link: string; icon: string }> = {
   topbar: {
-    link: "text-gray-400 hover:text-red-600 transition-colors",
+    link: "text-gray-400 hover:text-[#ee2b2d] transition-colors",
     icon: "w-4 h-4",
   },
   navbar: {
-    link: "text-gray-500 hover:text-red-600 hover:scale-110 transition-all",
+    link: "text-gray-500 hover:text-[#ee2b2d] hover:scale-110 transition-all",
     icon: "w-[18px] h-[18px]",
   },
   footer: {
-    link: "w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors",
+    link: "w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#ee2b2d] transition-colors",
     icon: "w-4 h-4",
   },
 };

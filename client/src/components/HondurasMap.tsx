@@ -30,7 +30,7 @@ export default function HondurasMap() {
             {CITIES.filter((c) => c.name === activeCity).map((city) => (
               <div key={city.name} className="animate-fadeIn">
                 <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#ee2b2d] flex-shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-gray-900 text-sm">{city.name}</h4>
                     <p className="text-gray-600 text-xs mt-1">{city.desc}</p>
@@ -53,7 +53,7 @@ export default function HondurasMap() {
               onClick={() => setActiveCity(activeCity === city.name ? null : city.name)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 activeCity === city.name
-                  ? "bg-red-600 text-white shadow-md"
+                  ? "bg-[#ee2b2d] text-white shadow-md"
                   : "bg-gray-100 text-gray-700 hover:bg-red-100"
               }`}
             >
