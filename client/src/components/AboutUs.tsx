@@ -1,8 +1,9 @@
-/* AboutUs — Light theme: white bg, cards with borders, red icons */
+/* AboutUs — Quiénes somos: historia con foto, misión y visión, valores seleccionables
+ * (clases jh-* de la referencia) */
+import "@/styles/story-image.css";
 import { useState } from "react";
-import { Shield, Heart, Eye, Lightbulb, Star, Target, Compass, History } from "lucide-react";
+import { Shield, Heart, Eye, Lightbulb, Star } from "lucide-react";
 import { VALUES, IMAGES, ABOUT_PARAGRAPHS, HISTORY_PARAGRAPHS, MISSION, VISION } from "@/lib/data";
-import WhatsAppLink from "./WhatsAppLink";
 
 const VALUE_ICONS = [Shield, Heart, Eye, Lightbulb, Star];
 
@@ -11,61 +12,63 @@ export default function AboutUs() {
   const [activeValue, setActiveValue] = useState<number | null>(null);
 
   return (
-    <section id="nosotros" className="pt-12 pb-20 bg-white">
-      <div className="container">
-        <div className="flex flex-col items-center gap-16">
-          <div className="w-full grid lg:grid-cols-2 gap-10 items-center">
-          <div className="reveal-right w-full">
-            <h3 className="text-2xl font-black text-gray-900 mb-4">¿Quiénes somos?</h3>
-            <div className="space-y-4 mb-10">
-              {ABOUT_PARAGRAPHS.map((paragraph) => (
-                <p key={paragraph} className="text-gray-600 leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+    <>
+      {/* Historia */}
+      <section className="jh-section jh-section-flush-bottom">
+        <div className="jh-container jh-story-grid">
+          <div className="jh-story-image">
+            <img src={IMAGES.aboutUs} alt="Equipo de Japan HN en su centro de distribución" loading="lazy" />
+            <div className="jh-image-caption">Japan HN · Grupo CAP Honduras</div>
+          </div>
 
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                <History className="w-5 h-5 text-[#ee2b2d]" />
-              </div>
-              <h3 className="text-2xl font-black text-gray-900">Nuestra Historia</h3>
-            </div>
-            <div className="space-y-4 mb-10">
-              {HISTORY_PARAGRAPHS.map((paragraph) => (
-                <p key={paragraph} className="text-gray-600 leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
+          <div className="jh-story-copy">
+            <p>{ABOUT_PARAGRAPHS[0]}</p>
+            <p>{ABOUT_PARAGRAPHS[1]}</p>
+            {HISTORY_PARAGRAPHS.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+
+            <div className="jh-history">
+              <article className="jh-history-item">
+                <strong>Nuestra especialidad</strong>
+                <p>Distribución B2B de repuestos japoneses para negocios del sector automotriz.</p>
+              </article>
+              <article className="jh-history-item">
+                <strong>Nuestro respaldo</strong>
+                <p>Calidad, precisión y relaciones duraderas con clientes y socios comerciales.</p>
+              </article>
             </div>
           </div>
-          <div className="reveal-left relative w-full max-w-2xl justify-self-center rounded-xl overflow-hidden">
-            <img
-              src={IMAGES.aboutUs}
-              alt="Asesor de Japan HN atendiendo a un cliente por teléfono"
-              className="w-full h-auto"
-            />
-          </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 reveal">
-            <div className="bg-[#000002] border border-white/10 rounded-2xl p-8 hover:border-[#ee2b2d]/40 transition-colors">
-              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-4">
-                <Target className="w-6 h-6 text-[#ee2b2d]" />
-              </div>
-              <h3 className="text-xl font-black text-white mb-3">Misión</h3>
-              <p className="text-gray-300 leading-relaxed">{MISSION}</p>
+        </div>
+      </section>
+
+      {/* Misión, visión y valores */}
+      <section className="jh-section jh-mission">
+        <div className="jh-container">
+          <div className="jh-section-head">
+            <div>
+              <p className="jh-section-kicker">Nuestro propósito</p>
+              <h2>
+                Una empresa con <span>dirección y valores.</span>
+              </h2>
             </div>
-            <div className="bg-[#000002] border border-white/10 rounded-2xl p-8 hover:border-[#ee2b2d]/40 transition-colors">
-              <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-4">
-                <Compass className="w-6 h-6 text-[#ee2b2d]" />
-              </div>
-              <h3 className="text-xl font-black text-white mb-3">Visión</h3>
-              <p className="text-gray-300 leading-relaxed">{VISION}</p>
-            </div>
+            <p>Trabajamos para crear confianza y valor sostenido para las empresas del sector automotriz.</p>
+          </div>
+
+          <div className="jh-mission-grid">
+            <article className="jh-mission-card">
+              <h3>Misión</h3>
+              <p>{MISSION}</p>
+            </article>
+            <article className="jh-mission-card">
+              <h3>Visión</h3>
+              <p>{VISION}</p>
+            </article>
           </div>
 
           {/* Nuestros valores en órbita alrededor de la imagen de empaque */}
           <div className="mt-10 w-full flex flex-col items-center">
+            <p className="jh-section-kicker text-center">Principios Japan HN</p>
             <h3 className="text-2xl font-black text-gray-900 mb-6 text-center">Nuestros Valores</h3>
             <div className="relative mx-auto w-80 h-80 sm:w-[28rem] sm:h-[28rem]">
               <div className="absolute inset-0 rounded-full bg-gray-100 animate-pulse-soft" />
@@ -104,9 +107,9 @@ export default function AboutUs() {
               })}
             </div>
 
-            <div className="mt-8 min-h-[7rem]">
+            <div className="mt-8 min-h-[7rem] w-full">
               {activeValue !== null ? (
-                <div className="max-w-md mx-auto bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
+                <div className="max-w-md mx-auto bg-white border border-gray-200 rounded-xl p-5 text-center">
                   <h4 className="font-bold text-gray-900 mb-1">{VALUES[activeValue].title}</h4>
                   <p className="text-gray-500 text-sm leading-relaxed">{VALUES[activeValue].desc}</p>
                 </div>
@@ -122,8 +125,7 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

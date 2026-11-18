@@ -1,210 +1,201 @@
-/* Contact — Dark theme compacto: tarjetas de contacto, mapa y formulario de cotización */
+/* Contact — panel de atención comercial (negro) + formulario de cotización mayorista.
+ * Clases jh-* de la referencia. El formulario abre WhatsApp con el mensaje para revisarlo y enviarlo. */
+import "@/styles/jobs-split.css";
+import "@/styles/contact-form.css";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send, BriefcaseBusiness, Linkedin, ExternalLink } from "lucide-react";
-import { PHONE_DISPLAY, PHONE_TEL, EMAIL, ADDRESS, SCHEDULE } from "@/lib/data";
-import { whatsappUrl, WhatsAppIcon } from "./WhatsAppLink";
+import { MapPin, Phone, Mail, Clock, ArrowUpRight, Linkedin } from "lucide-react";
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL } from "@/lib/data";
+import { whatsappUrl } from "./WhatsAppLink";
 import { PrivacyPolicyDialog } from "./PrivacyPolicy";
 
-const MAP_SRC = `https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS)}&z=15&output=embed`;
-
-const INFO = [
-  { icon: MapPin, title: "Dirección", value: `${ADDRESS}, Tegucigalpa` },
-  { icon: Phone, title: "Teléfono / WhatsApp", value: PHONE_DISPLAY, href: `tel:${PHONE_TEL}` },
-  { icon: Mail, title: "Correo electrónico", value: EMAIL, href: `mailto:${EMAIL}` },
-  { icon: Clock, title: "Horario de atención", value: SCHEDULE.join(" · ") },
+const DETAILS = [
+  {
+    icon: MapPin,
+    title: "Dirección",
+    body: "Barrio Guacerique, Bulevar Comunidad Europea, frente a Plaza Aire Frío, Tegucigalpa.",
+  },
+  {
+    icon: Phone,
+    title: "Teléfono / WhatsApp",
+    href: `https://wa.me/${PHONE_TEL.replace("+", "")}`,
+    body: PHONE_DISPLAY,
+  },
+  { icon: Mail, title: "Correo electrónico", href: `mailto:${EMAIL}`, body: EMAIL },
+  {
+    icon: Clock,
+    title: "Horario de atención",
+    body: "Lunes a viernes: 8:00 a.m. – 5:00 p.m.\nSábado: 8:00 a.m. – 12:00 m.d.\nDomingo: cerrado",
+  },
 ];
 
+const INTERESTS = ["Suspensión", "Dirección", "Motor", "Transmisión", "Rótulas y terminales", "Asesoría general"];
+
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", company: "", phone: "", interest: "", message: "" });
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [policyOpen, setPolicyOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!privacyAccepted) return;
-    const text = `Hola, soy ${form.name}.\n\nEmail: ${form.email}\nTeléfono: ${form.phone}\n\n${form.message}`;
+    const text =
+      `Hola, soy ${form.name} de ${form.company}.\n` +
+      `Teléfono: ${form.phone}\n` +
+      `Línea de interés: ${form.interest}\n\n` +
+      `${form.message}`;
     window.open(whatsappUrl(text), "_blank");
   };
 
-  const inputClass =
-    "w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#d4a02a]/30 focus:border-[#d4a02a]/60 transition-all";
-
   return (
-    <section id="contacto" className="pt-12 pb-0 bg-white">
-      <div className="container">
-        {/* Header */}
-        <div className="text-center mb-10 reveal">
-          <h2 className="text-2xl sm:text-3xl font-black text-gray-900">Contáctanos</h2>
-          <div className="w-16 h-px bg-[#d4a02a] mx-auto mt-3" />
-          <p className="text-gray-600 text-sm mt-4 max-w-xl mx-auto">
-            Estamos listos para atender distribuidores que buscan un proveedor confiable. Contáctanos para cotizaciones, pedidos y asesoría personalizada.
-          </p>
-        </div>
+    <section className="jh-section jh-section-flush-bottom">
+      <div className="jh-container jh-contact-grid">
+        <aside>
+          <div className="jh-contact-panel">
+            <p className="jh-section-kicker">Japan HN · Grupo CAP Honduras</p>
+            <h2>Atención comercial</h2>
+            <p>Oficina principal y punto de atención comercial en Tegucigalpa.</p>
 
-        <div className="grid lg:grid-cols-2 gap-6 reveal">
-          {/* Info */}
-          <div className="space-y-3">
-            {INFO.map(({ icon: Icon, title, value, href }) => (
-              <div key={title} className="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-4 shadow-sm">
-                <div className="w-9 h-9 bg-[#f7efd9] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-4 h-4 text-[#b8861f]" />
-                </div>
-                <div className="min-w-0">
-                  <h4 className="font-bold text-gray-900 text-sm">{title}</h4>
+            {DETAILS.map(({ icon: Icon, title, href, body }) => (
+              <div key={title} className="jh-contact-detail">
+                <Icon aria-hidden="true" />
+                <div>
+                  <strong>{title}</strong>
                   {href ? (
-                    <a href={href} className="text-gray-600 text-sm hover:text-[#b8861f] transition-colors">{value}</a>
+                    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
+                      {body}
+                    </a>
                   ) : (
-                    <p className="text-gray-600 text-sm">{value}</p>
+                    <span>
+                      {body.split("\n").map((line) => (
+                        <span key={line} style={{ display: "block" }}>{line}</span>
+                      ))}
+                    </span>
                   )}
                 </div>
               </div>
             ))}
-
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center justify-center gap-2 bg-green-500 text-white rounded-xl px-6 py-5 text-center shadow-md shadow-green-500/20 hover:bg-green-600 hover:-translate-y-0.5 transition-all"
-            >
-              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white/15">
-                <WhatsAppIcon className="w-5 h-5" />
-              </span>
-              <h4 className="font-bold text-base">WhatsApp directo para cotizaciones</h4>
-              <p className="text-green-50 text-xs">Respuesta inmediata</p>
-            </a>
           </div>
 
-          {/* Mapa */}
-          <div className="rounded-xl overflow-hidden bg-white border border-gray-200 shadow-sm flex flex-col">
-            <iframe
-              title="Ubicación de Japan HN"
-              src={MAP_SRC}
-              className="w-full h-64 lg:h-full min-h-[260px] border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-            <div className="flex items-center gap-3 px-4 py-3 border-t border-gray-100">
-              <MapPin className="w-4 h-4 text-[#b8861f] flex-shrink-0" />
-              <p className="text-gray-600 text-xs">Oficina principal y punto de atención comercial.</p>
+          <div className="jh-jobs-note jh-jobs-split">
+            <img className="jh-jobs-photo" src="/images/contacto-trabajo.jpg" alt="Técnico revisando el motor de un vehículo" loading="lazy" />
+            <div className="jh-jobs-body">
+            <strong>¿Deseas trabajar con nosotros?</strong>
+            <p>Consulta las oportunidades del Grupo CAP Honduras y sus canales de postulación.</p>
+            <div className="jh-jobs-actions">
+              <a
+                className="jh-button jh-button-red"
+                href="https://recruit.capgrupo.com/aplicar"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Aplicar ahora <ArrowUpRight aria-hidden="true" />
+              </a>
+              <a
+                className="jh-button jh-button-outline"
+                href="https://www.linkedin.com/company/caphn/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin aria-hidden="true" /> Ver LinkedIn
+              </a>
+            </div>
             </div>
           </div>
-        </div>
+        </aside>
 
-        {/* Trabajar con nosotros */}
-        <div className="mt-10 rounded-xl bg-[#000002] p-5 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
-          <div className="flex items-center gap-2 text-white text-sm font-bold">
-            <BriefcaseBusiness className="w-4 h-4 text-[#d4a02a]" />
-            ¿Deseas trabajar con nosotros?
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <a
-              href="https://recruit.capgrupo.com/aplicar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-xs font-bold text-[#000002] transition-colors hover:bg-gray-100"
-            >
-              Aplicar ahora
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/caphn/posts/?feedView=all"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md border border-white/60 px-4 py-2 text-xs font-bold text-white transition-colors hover:bg-white/10"
-            >
-              <Linkedin className="w-3.5 h-3.5" />
-              Ver LinkedIn
-            </a>
-          </div>
-        </div>
+        <section className="jh-contact-form">
+          <p className="jh-section-kicker">Cotización mayorista</p>
+          <h2>Cuéntanos qué repuestos buscas.</h2>
+          <p>Deja tus datos y prepara una consulta para nuestro equipo comercial.</p>
 
-        {/* Formulario de cotización */}
-        <div className="mt-10 max-w-2xl mx-auto bg-gray-50 border border-gray-200 rounded-xl p-5 lg:p-6 reveal">
-          <h3 className="text-base font-black text-gray-900">Solicita tu cotización</h3>
-          <div className="w-8 h-0.5 bg-[#d4a02a] rounded mt-2 mb-4" />
-
-          <form onSubmit={handleSubmit} className="space-y-3">
-            <div className="grid sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-xs font-bold text-gray-600 mb-1">Nombre</label>
-                <input
-                  type="text"
-                  placeholder="Tu nombre"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className={inputClass}
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-600 mb-1">Email</label>
-                <input
-                  type="email"
-                  placeholder="tu@email.com"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className={inputClass}
-                  required
-                />
-              </div>
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-gray-600 mb-1">Teléfono</label>
+          <form className="jh-form-grid" onSubmit={handleSubmit}>
+            <div className="jh-field">
+              <label htmlFor="jh-name">Nombre completo *</label>
               <input
+                id="jh-name"
+                autoComplete="name"
+                required
+                placeholder="Tu nombre"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+              />
+            </div>
+            <div className="jh-field">
+              <label htmlFor="jh-company">Empresa *</label>
+              <input
+                id="jh-company"
+                autoComplete="organization"
+                required
+                placeholder="Nombre de tu negocio"
+                value={form.company}
+                onChange={(e) => setForm({ ...form, company: e.target.value })}
+              />
+            </div>
+            <div className="jh-field">
+              <label htmlFor="jh-phone">Teléfono *</label>
+              <input
+                id="jh-phone"
                 type="tel"
-                placeholder="+504 0000-0000"
+                autoComplete="tel"
+                required
+                placeholder="+504"
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className={inputClass}
               />
             </div>
-            <div>
-              <label className="block text-xs font-bold text-gray-600 mb-1">Mensaje</label>
+            <div className="jh-field">
+              <label htmlFor="jh-interest">Línea de interés *</label>
+              <select
+                id="jh-interest"
+                required
+                value={form.interest}
+                onChange={(e) => setForm({ ...form, interest: e.target.value })}
+              >
+                <option value="" disabled>Selecciona una categoría</option>
+                {INTERESTS.map((item) => (
+                  <option key={item}>{item}</option>
+                ))}
+              </select>
+            </div>
+            <div className="jh-field full">
+              <label htmlFor="jh-message">¿Qué necesitas cotizar?</label>
               <textarea
-                placeholder="Indica el repuesto, marca, modelo del vehículo y cantidad requerida."
-                rows={3}
+                id="jh-message"
+                placeholder="Cuéntanos qué repuestos o aplicaciones buscas."
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className={`${inputClass} resize-none`}
-                required
               />
             </div>
-            <div className="flex items-start gap-2 text-xs text-gray-600 leading-relaxed">
+
+            <label className="jh-privacy">
               <input
-                id="privacy-accept"
                 type="checkbox"
                 checked={privacyAccepted}
                 onChange={(e) => setPrivacyAccepted(e.target.checked)}
-                className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-gray-300 text-[#d4a02a] focus:ring-[#d4a02a]/40"
                 required
               />
-              <label htmlFor="privacy-accept" className="cursor-pointer">
+              <span>
                 He leído y acepto la{" "}
-                <button
-                  type="button"
-                  onClick={() => setPolicyOpen(true)}
-                  className="font-semibold text-[#b8861f] underline underline-offset-2 hover:text-[#d4a02a]"
-                >
+                <button type="button" onClick={() => setPolicyOpen(true)}>
                   Política de privacidad y uso de datos
                 </button>
                 , y autorizo el tratamiento de mis datos para atender esta solicitud.
-              </label>
-            </div>
+              </span>
+            </label>
             <PrivacyPolicyDialog
               open={policyOpen}
               onOpenChange={setPolicyOpen}
               onAccept={() => setPrivacyAccepted(true)}
             />
-            <button
-              type="submit"
-              disabled={!privacyAccepted}
-              className="w-full flex items-center justify-center gap-2 bg-[#ee2b2d] text-white py-2.5 rounded-md font-bold text-xs hover:bg-[#c92224] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#ee2b2d]"
-            >
-              <Send className="w-3.5 h-3.5" />
-              Enviar cotización por WhatsApp
+
+            <p className="jh-form-hint">
+              Al continuar se abrirá WhatsApp con tu mensaje para que lo revises y lo envíes.
+            </p>
+            <button className="jh-button jh-button-red" type="submit" disabled={!privacyAccepted}>
+              Preparar consulta por WhatsApp
             </button>
           </form>
-        </div>
+        </section>
       </div>
     </section>
   );

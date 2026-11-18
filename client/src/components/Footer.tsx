@@ -1,43 +1,48 @@
-/* Footer — Light theme: dark footer for visual anchoring */
-import { IMAGES } from "@/lib/data";
-import SocialIcons from "./SocialIcons";
+/* Footer — pie mínimo: logo y iconos de redes sociales. Botón flotante de WhatsApp. */
+import { IMAGES, SOCIALS } from "@/lib/data";
+import { BRAND_ICON_PATHS } from "@/lib/brandIcons";
 import { whatsappUrl, WhatsAppIcon } from "./WhatsAppLink";
+
+const NETWORKS = SOCIALS.filter((s) => s.name !== "WhatsApp");
 
 export default function Footer() {
   return (
-    <footer className="bg-[#000002] text-gray-300 py-10">
-      <div className="container flex flex-col items-center gap-6">
-        <img
-          src={IMAGES.logoJapanHn}
-          alt="Japan HN"
-          className="h-14 w-auto"
-          width={533}
-          height={246}
-        />
-        <SocialIcons variant="footer" />
-      </div>
+    <>
+      <footer className="jh-footer">
+        <div className="jh-container flex flex-col items-center gap-7">
+          <a href="/" aria-label="Japan HN, inicio">
+            <img className="jh-footer-logo" src={IMAGES.logoJapanHn} alt="Japan HN" />
+          </a>
 
-      {/* WhatsApp FAB */}
+          <div className="flex items-center gap-3">
+            {NETWORKS.map((s) => (
+              <a
+                key={s.name}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.name}
+                title={s.name}
+                className="w-10 h-10 flex items-center justify-center rounded-md border border-white/15 text-white/75 hover:border-[#ee2b2d] hover:text-white transition-colors"
+              >
+                <svg className="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d={BRAND_ICON_PATHS[s.icon]} />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+      </footer>
+
       <a
+        className="jh-float"
         href={whatsappUrl()}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-600 transition-all hover:scale-110 z-50"
         aria-label="Contactar por WhatsApp"
       >
-        <WhatsAppIcon className="w-7 h-7 text-white" />
+        <WhatsAppIcon className="w-6 h-6" />
       </a>
-
-      {/* Back to top */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-6 left-6 w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center shadow-md hover:bg-red-50 transition-all z-50"
-        aria-label="Volver arriba"
-      >
-        <svg className="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-        </svg>
-      </button>
-    </footer>
+    </>
   );
 }
