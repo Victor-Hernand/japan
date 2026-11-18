@@ -1,37 +1,35 @@
-/* Home — Japan HN Light Theme
- * Design: Precision Engineering / Blanco Técnico
- * Fondos claros, acentos rojos, estructura fiel al original */
+/* Home — inicio con el diseño de la referencia Japan HN (clases jh-*). */
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import Catalog from "@/components/Catalog";
-import ProductTabs from "@/components/ProductTabs";
-import Brands from "@/components/Brands";
-import CTA from "@/components/CTA";
-import Testimonial from "@/components/Testimonial";
 import Footer from "@/components/Footer";
+import {
+  HomeHero,
+  HomeStats,
+  HomeCatalog,
+  HomeBrands,
+  HomeWhy,
+  HomeTestimonial,
+  HomeCTA,
+} from "@/components/HomeSections";
 
 export default function Home() {
   useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="jh-page min-h-screen">
       <TopBar />
       <Navbar />
-      <Hero />
-      <Stats />
-      <Catalog />
-      <section className="py-16 bg-[#000002]">
-        <div className="container">
-          <ProductTabs />
-        </div>
-      </section>
-      <Brands />
-      <CTA />
-      <Testimonial />
+      <main id="jh-main">
+        <HomeHero />
+        <HomeStats />
+        <HomeCatalog />
+        <HomeBrands />
+        <HomeWhy />
+        <HomeTestimonial />
+        <HomeCTA />
+      </main>
       <Footer />
     </div>
   );

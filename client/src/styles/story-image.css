@@ -1,0 +1,6 @@
+/* Foto del equipo en "Nosotros": se muestra completa, sin recortar las orillas. */
+.jh-story-image img { height: auto; object-fit: contain; }
+/* Foto más grande: columna de imagen más ancha en escritorio. */
+@media (min-width: 1000px) {
+  .jh-story-grid { grid-template-columns: 1.35fr 1fr; }
+}

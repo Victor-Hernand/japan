@@ -5,13 +5,13 @@
  * ============================================================ */
 
 export const IMAGES = {
-  heroBg: "/images/hero-bg-japanhn.jpg",
+  heroBg: "/images/hero-bg-equipo.jpg",
   ctaBg: "/images/cta-bg.jpg",
   warehouse: "/images/warehouse.jpg",
   aboutUs: "/images/nosotros-equipo-japanhn.jpg",
   aboutPacking: "/images/nosotros-empaque-555.png",
   suspension: "/images/suspension.jpg",
-  catSuspension: "/images/cat-suspension-kyb-excel-g.jpg",
+  catSuspension: "/images/kyb-excel-g-suspension.png",
   catDireccion: "/images/cat-direccion-555-barra.jpg",
   catMotor: "/images/cat-motor-cada-empaques.jpg",
   catTransmision: "/images/cat-transmision-toyo-cruceta.jpg",
@@ -110,7 +110,7 @@ export const CATALOG_TABS = [
     title: "Suspensión",
     desc: "Contamos con una línea completa de componentes de suspensión para todo tipo de vehículos japoneses: Toyota, Nissan, Honda, Mitsubishi y más.",
     items: ["Amortiguadores", "Barras estabilizadoras", "Soportes de motor", "Bujes de suspensión"],
-    image: IMAGES.catSuspension,
+    image: "/images/cat-suspension-studio.png",
   },
   {
     id: "direccion",
@@ -118,7 +118,7 @@ export const CATALOG_TABS = [
     title: "Dirección",
     desc: "Terminales, rótulas y componentes de dirección de precisión japonesa para mantener el control total del vehículo.",
     items: ["Terminales de dirección", "Rótulas superiores e inferiores", "Brazos de dirección", "Cremalleras"],
-    image: IMAGES.catDireccion,
+    image: "/images/cat-direccion-studio.png",
   },
   {
     id: "motor",
@@ -126,7 +126,7 @@ export const CATALOG_TABS = [
     title: "Motor",
     desc: "Piezas de motor de alta calidad para garantizar el rendimiento óptimo de los vehículos japoneses.",
     items: ["Bombas de agua", "Kits de distribución", "Empaques de motor", "Sensores y componentes"],
-    image: IMAGES.catMotor,
+    image: "/images/cat-motor-studio.png",
   },
   {
     id: "transmision",
@@ -134,7 +134,7 @@ export const CATALOG_TABS = [
     title: "Transmisión",
     desc: "Componentes de transmisión que aseguran una conducción suave y eficiente.",
     items: ["Rodamientos", "Crucetas", "Juntas homocinéticas", "Kits de embrague"],
-    image: IMAGES.catTransmision,
+    image: "/images/cat-transmision-studio.png",
   },
 ];
 

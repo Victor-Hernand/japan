@@ -11,10 +11,10 @@ export default function Hero() {
         className="absolute inset-0 lg:left-auto lg:w-[62%] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${IMAGES.heroBg})` }}
       />
-      <div className="absolute inset-0 bg-white/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-white lg:from-40% lg:via-white/60 lg:via-55% lg:to-transparent lg:to-75%" />
+      <div className="absolute inset-0 bg-white/70 lg:bg-transparent lg:bg-gradient-to-r lg:from-white lg:from-30% lg:via-white/40 lg:via-45% lg:to-transparent lg:to-70%" />
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
 
-      <div className="container relative z-10">
+      <div className="relative z-10 w-full px-6 lg:px-10">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-6">
             <span className="w-2 h-2 bg-[#ee2b2d] rounded-full animate-pulse" />

@@ -1,0 +1,58 @@
+/* Barra de cifras del inicio (clases st-*). Acotado a .st-bar. */
+.st-bar {
+  background: linear-gradient(90deg, #15171b, #1b1e23);
+  color: #fff;
+  font-family: var(--jh-font);
+}
+.st-grid {
+  min-height: 118px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) minmax(170px, 0.9fr);
+  align-items: stretch;
+}
+.st-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 22px 18px;
+}
+.st-item + .st-item { border-left: 1px solid rgba(255, 255, 255, .16); }
+.st-icon { width: 40px; height: 40px; flex: 0 0 auto; display: grid; place-items: center; }
+.st-icon svg { width: 34px; height: 34px; fill: none; stroke: #fff; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.st-text { display: flex; flex-direction: column; gap: 4px; }
+.st-text strong { color: #ee2b2d; font-size: clamp(28px, 3vw, 40px); font-weight: 900; letter-spacing: -.04em; line-height: 1; }
+.st-text span { color: #e4e5e6; font-size: 12px; font-weight: 500; line-height: 1.3; }
+.st-map {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: 22px 18px;
+  border-left: 1px solid rgba(255, 255, 255, .16);
+}
+.st-map-img {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 auto;
+}
+.st-map-text {
+  position: relative;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ee2b2d;
+  color: #8b9097;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .st-grid { grid-template-columns: repeat(3, 1fr); }
+  .st-map { display: none; }
+  .st-item { flex-direction: column; gap: 6px; padding: 18px 8px; text-align: center; }
+  .st-text { align-items: center; }
+  .st-text span { font-size: 10px; }
+}

@@ -1,0 +1,156 @@
+/* Hero del inicio (clases hv-*). Acotado a .hv-hero. */
+.hv-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(100deg, #111317 0%, #181b20 55%, #202329 100%);
+  font-family: var(--jh-font);
+  color: #fff;
+}
+.hv-hero { min-height: 600px; }
+.hv-grid {
+  min-height: 600px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+}
+.hv-copy { position: relative; z-index: 2; max-width: min(560px, 46vw); padding: 56px 0 64px; }
+.hv-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  color: #ee2b2d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.hv-eyebrow span { width: 26px; height: 2px; background: currentColor; }
+.hv-hero h1 {
+  margin: 0 0 16px;
+  font-size: clamp(40px, 5vw, 66px);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: 1.02;
+  color: #fff;
+}
+.hv-hero h1 span { color: #ee2b2d; }
+.hv-lead { margin: 0 0 26px; color: #e4e5e6; font-size: 18px; font-weight: 700; }
+.hv-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hv-btn {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.hv-btn:hover { transform: translateY(-2px); }
+.hv-btn-red { color: #fff; background: #ee2b2d; box-shadow: 0 10px 24px rgba(238, 43, 45, .25); }
+.hv-btn-red:hover { background: #c92224; }
+.hv-btn-line { color: #fff; background: transparent; border-color: rgba(255, 255, 255, .35); }
+.hv-btn-line:hover { border-color: #fff; }
+.hv-btn-line span { color: #ee2b2d; }
+.hv-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.hv-benefits li { display: flex; align-items: center; gap: 10px; color: #aeb3bb; font-size: 12px; line-height: 1.4; }
+.hv-benefits svg { width: 26px; height: 26px; flex: 0 0 auto; fill: none; stroke: #fff; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.hv-visual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  min-height: 0;
+  overflow: hidden;
+  background: #1c1e21;
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%);
+}
+.hv-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hv-visual::before {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 12%;
+  width: 18px;
+  content: "";
+  background: #ee2b2d;
+  transform: skewX(-20deg);
+}
+.hv-visual::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(12, 14, 17, .25), transparent 40%);
+}
+.hv-caption {
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+  right: 40px;
+  margin: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .45);
+}
+.hv-caption::after { display: block; width: 28px; height: 3px; margin-top: 12px; content: ""; background: #ee2b2d; }
+
+@media (max-width: 900px) {
+  .hv-hero { min-height: 0; }
+  .hv-grid { grid-template-columns: 1fr; min-height: 0; }
+  .hv-copy { max-width: none; padding: 40px 0 32px; }
+  .hv-visual { position: relative; width: 100%; min-height: 300px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  .hv-visual::before { left: 0; }
+  .hv-caption { top: 22px; right: 22px; font-size: 11px; }
+}
+
+/* Aros animados detrás del texto */
+.hv-rings {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  width: 560px;
+  height: 560px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hv-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(238, 43, 45, .35);
+  animation: hv-pulse 7s ease-in-out infinite;
+}
+.hv-ring-2 { inset: 12%; border-color: rgba(255, 255, 255, .14); animation-delay: -2.3s; }
+.hv-ring-3 { inset: 24%; border-style: dashed; border-color: rgba(238, 43, 45, .25); animation-delay: -4.6s; }
+@keyframes hv-pulse {
+  0%, 100% { transform: scale(.96) rotate(0deg); opacity: .35; }
+  50% { transform: scale(1.04) rotate(12deg); opacity: .85; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hv-ring { animation: none; }
+}
+@media (max-width: 900px) {
+  .hv-rings { width: 340px; height: 340px; top: 42%; }
+}
