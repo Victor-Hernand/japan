@@ -58,8 +58,8 @@ export const BRANDS = [
 ];
 
 export const STATS = [
-  { value: 600, prefix: "+", suffix: "", label: "Clientes Activos" },
-  { value: 4000, prefix: "+", suffix: "", label: "SKU Disponibles" },
+  { value: 300, prefix: "+", suffix: "", label: "Clientes Activos" },
+  { value: 4900, prefix: "+", suffix: "", label: "SKU Disponibles" },
   { value: 40, prefix: "", suffix: "", label: "Marcas Premium" },
 ];
 
